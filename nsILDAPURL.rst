@@ -55,23 +55,6 @@ init
 
 Initialize an LDAP URL
 
-@param aUrlType       - one of the URLTYPE_ flags @seealso nsIStandardURL
-@param aDefaultPort   - if the port parsed from the URL string matches
-this port, then the port will be removed from the
-canonical form of the URL.
-@param aSpec          - URL string.
-@param aOriginCharset - the charset from which this URI string
-originated.  this corresponds to the charset
-that should be used when communicating this
-URI to an origin server, for example.  if
-null, then provide aBaseURI implements this
-interface, the origin charset of aBaseURI will
-be assumed, otherwise defaulting to UTF-8 (i.e.,
-no charset transformation from aSpec).
-@param aBaseURI       - if null, aSpec must specify an absolute URI.
-otherwise, aSpec will be resolved relative
-to aBaseURI.
-
 Parameters
 ^^^^^^^^^^
 
@@ -92,8 +75,6 @@ addAttribute
 Add one attribute to the array of attributes to request. If the
 attribute is already in our array, this becomes a noop.
 
-@param aAttribute          An LDAP attribute (e.g. "cn")
-
 Parameters
 ^^^^^^^^^^
 
@@ -109,8 +90,6 @@ removeAttribute
 
 Remove one attribute from the array of attributes to request. If
 the attribute didn't exist in the array, this becomes a noop.
-
-@param aAttribute                    An LDAP attribute (e.g. "cn")
 @exception NS_ERROR_OUT_OF_MEMORY    Ran out of memory
 
 Parameters
@@ -127,9 +106,6 @@ hasAttribute
 ------------
 
 Test if an attribute is in our list of attributes already
-
-@param aAttribute                    An LDAP attribute (e.g. "cn")
-@return boolean                      Truth value
 @exception NS_ERROR_NULL_POINTER     NULL pointer to GET method
 
 Parameters
@@ -141,3 +117,4 @@ Return value
 ^^^^^^^^^^^^
 
 * ``boolean``
+  boolean                      Truth value

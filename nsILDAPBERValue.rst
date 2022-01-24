@@ -14,7 +14,6 @@ set
 ---
 
 Set the BER value from an array of bytes (copies).
-
 @exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Parameters
@@ -31,7 +30,6 @@ setFromUTF8
 -----------
 
 Set the BER value from a UTF8 string (copies).
-
 @exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Parameters
@@ -51,7 +49,6 @@ Get the BER value as an array of bytes.  Note that if this value is
 zero-length, aCount and aRetVal will both be 0.  This means that
 (in C++ anyway) the caller MUST test either aCount or aRetval before
 dereferencing aRetVal.
-
 @exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Parameters

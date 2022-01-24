@@ -162,9 +162,6 @@ init
 
 Initialize this object.  Must be called before calling any other method
 on this interface.
-
-@param  aValue  value to preinitialize with; 0 for a new empty object
-
 @exception  NS_ERROR_NOT_IMPLEMENTED  preinitialization is currently
 not implemented
 @exception  NS_ERROR_OUT_OF_MEMORY    unable to allocate the internal
@@ -174,6 +171,7 @@ Parameters
 ^^^^^^^^^^
 
 * ``in nsILDAPBERValue aValue``
+  value to preinitialize with; 0 for a new empty object
 
 Return value
 ^^^^^^^^^^^^
@@ -184,40 +182,35 @@ putString
 ---------
 
 Write a string to this element.
-
-@param  aString  string to write
-@param  aTag     tag for this string (if TAG_LBER_DEFAULT is used,
-TAG_LBER_OCTETSTRING will be written).
-
-@return     number of bytes written
-
 @exception  NS_ERROR_FAILUE   C-SDK returned error
 
 Parameters
 ^^^^^^^^^^
 
 * ``in AUTF8String aString``
+  string to write
 * ``in unsigned long aTag``
+  tag for this string (if TAG_LBER_DEFAULT is used,
+  TAG_LBER_OCTETSTRING will be written).
 
 Return value
 ^^^^^^^^^^^^
 
 * ``unsigned long``
+  number of bytes written
 
 startSet
 --------
 
 Start a set.  Sets may be nested.
-
-@param  aTag  tag for this set (if TAG_LBER_DEFAULT is used,
-TAG_LBER_SET will be written).
-
 @exception  NS_ERROR_FAILUE   C-SDK returned an error
 
 Parameters
 ^^^^^^^^^^
 
 * ``in unsigned long aTag``
+  tag for this set (if TAG_LBER_DEFAULT is used,
+  TAG_LBER_SET will be written).
 
 Return value
 ^^^^^^^^^^^^
@@ -228,10 +221,7 @@ putSet
 ------
 
 Cause the entire set started by the last startSet() call to be written.
-
 @exception  NS_ERROR_FAILUE   C-SDK returned an error
-
-@return     number of bytes written
 
 Parameters
 ^^^^^^^^^^
@@ -241,3 +231,4 @@ Return value
 ^^^^^^^^^^^^
 
 * ``unsigned long``
+  number of bytes written

@@ -104,13 +104,10 @@ getAttributes
 -------------
 
 Get all the attributes in this message.
-
 @exception NS_ERROR_OUT_OF_MEMORY
 @exception NS_ERROR_ILLEGAL_VALUE        null pointer passed in
 @exception NS_ERROR_UNEXPECTED           bug or memory corruption
 @exception NS_ERROR_LDAP_DECODING_ERROR  problem during BER decoding
-
-@return  array of all attributes in the current message
 
 Parameters
 ^^^^^^^^^^
@@ -120,20 +117,16 @@ Return value
 ^^^^^^^^^^^^
 
 * ``Array``
+  array of all attributes in the current message
 
 getValues
 ---------
 
 Get an array of all the attribute values in this message.
-
-@param attr      The attribute whose values are to be returned
-
 @exception NS_ERROR_UNEXPECTED           Bug or memory corruption
 @exception NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
 decoding error.
 @exception NS_ERROR_OUT_OF_MEMORY
-
-@return  Array of values for attr.
 
 Parameters
 ^^^^^^^^^^
@@ -144,13 +137,12 @@ Return value
 ^^^^^^^^^^^^
 
 * ``Array``
+  Array of values for attr.
 
 toUnicode
 ---------
 
 get an LDIF-like string representation of this message
-
-@return unicode encoded string representation.
 
 Parameters
 ^^^^^^^^^^
@@ -160,21 +152,17 @@ Return value
 ^^^^^^^^^^^^
 
 * ``wstring``
+  unicode encoded string representation.
 
 getBinaryValues
 ---------------
 
 Get an array of all the attribute values in this message (a wrapper
 around the LDAP C SDK's get_values_len()).
-
-@param attr      The attribute whose values are to be returned
-
 @exception NS_ERROR_UNEXPECTED           Bug or memory corruption
 @exception NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
 decoding error.
 @exception NS_ERROR_OUT_OF_MEMORY
-
-@return   Array of nsILDAPBERValue objects.
 
 Parameters
 ^^^^^^^^^^
@@ -185,3 +173,4 @@ Return value
 ^^^^^^^^^^^^
 
 * ``Array``
+  Array of nsILDAPBERValue objects.

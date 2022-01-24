@@ -22,51 +22,40 @@ cardForEmailAddress
 -------------------
 
 Returns an address book card for the specified email address if found.
-
 If there are multiple cards with the given email address, this method will
 return one of these cards in an implementation-defined manner.
-
 Matching is performed in a case-insensitive manner.
-
 This method performs a synchronous operation. If the collection cannot do
 the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
-
-@param  emailAddress The email address to find in any of the email address
-fields. If emailAddress is empty, the database won't
-be searched and the function will return as if no card
-was found.
-@return              An nsIAbCard if one was found, else returns NULL.
 @exception NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
 Parameters
 ^^^^^^^^^^
 
 * ``in AUTF8String emailAddress``
+  The email address to find in any of the email address
+  fields. If emailAddress is empty, the database won't
+  be searched and the function will return as if no card
+  was found.
 
 Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbCard``
+  An nsIAbCard if one was found, else returns NULL.
 
 getCardFromProperty
 -------------------
 
 Returns an address book card for the specified property if found.
-
 If there are multiple cards with the given value for the property, this
 method will return one of these cards in an implementation-defined manner.
-
 This method performs a synchronous operation. If the collection cannot do
 the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
-
 If the property is not natively a string, it can still be searched for
 using the string-encoded value of the property, e.g. "0". See
 nsIAbCard::getPropertyAsAUTF8String for more information. Empty values will
 return no match, to prevent spurious results.
-
-@param  aProperty      The property to look for.
-@param  aValue         The value to search for.
-@param  aCaseSensitive True if matching should be done case-sensitively.
 @result                An nsIAbCard if one was found, else returns NULL.
 @exception NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
@@ -74,8 +63,11 @@ Parameters
 ^^^^^^^^^^
 
 * ``in string aProperty``
+  The property to look for.
 * ``in AUTF8String aValue``
+  The value to search for.
 * ``in boolean aCaseSensitive``
+  True if matching should be done case-sensitively.
 
 Return value
 ^^^^^^^^^^^^
@@ -86,21 +78,19 @@ getCardsFromProperty
 --------------------
 
 Returns all address book cards with a specific property matching value
-
 This function is almost identical to getCardFromProperty, with the
 exception of returning all cards rather than just the first.
-
-@param  aProperty      The property to look for.
-@param  aValue         The value to search for.
-@param  aCaseSensitive True if matching should be done case-sensitively.
 @result                The matching nsIAbCard instances.
 
 Parameters
 ^^^^^^^^^^
 
 * ``in string aProperty``
+  The property to look for.
 * ``in AUTF8String aValue``
+  The value to search for.
 * ``in boolean aCaseSensitive``
+  True if matching should be done case-sensitively.
 
 Return value
 ^^^^^^^^^^^^
@@ -140,10 +130,8 @@ search
 ------
 
 Searches the directory for cards matching query.
-
 The query takes the form:
 (BOOL1(FIELD1,OP1,VALUE1)..(FIELDn,OPn,VALUEn)(BOOL2(FIELD1,OP1,VALUE1)...)...)
-
 BOOLn   A boolean operator joining subsequent terms delimited by ().
 For possible values see CreateBooleanExpression().
 FIELDn  An addressbook card data field.
@@ -255,12 +243,8 @@ addCard
 -------
 
 Adds a card to the database.
-
 This card does not need to be of the same type as the database, e.g., one
 can add an nsIAbLDAPCard to an nsIAbMDBDirectory.
-
-@return "Real" card (eg nsIAbLDAPCard) that can be used for some
-extra functions.
 
 Parameters
 ^^^^^^^^^^
@@ -271,6 +255,8 @@ Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbCard``
+  "Real" card (eg nsIAbLDAPCard) that can be used for some
+  extra functions.
 
 modifyCard
 ----------
@@ -292,12 +278,11 @@ deleteCards
 
 Deletes the array of cards from the database.
 
-@param  aCards  The cards to delete from the database.
-
 Parameters
 ^^^^^^^^^^
 
 * ``in Array<nsIAbCard> aCards``
+  The cards to delete from the database.
 
 Return value
 ^^^^^^^^^^^^
@@ -327,12 +312,6 @@ Whether or not the directory should be searched when doing autocomplete,
 mode, so that should return false; additionally any other directory types
 that also do not support GetChildCards should return false.
 
-@param aIdentity  An optional parameter detailing the identity key (see
-nsIMsgAccountManager) that this autocomplete is being
-run against.
-@return           True if this directory should/can be used during
-local autocomplete.
-
 Parameters
 ^^^^^^^^^^
 
@@ -342,6 +321,8 @@ Return value
 ^^^^^^^^^^^^
 
 * ``boolean``
+  True if this directory should/can be used during
+  local autocomplete.
 
 addMailList
 -----------
@@ -349,18 +330,17 @@ addMailList
 Creates a new mailing list in the directory. Currently only supported
 for top-level directories.
 
-@param  list  The new mailing list to add.
-@return The mailing list directory added, which may have been modified.
-
 Parameters
 ^^^^^^^^^^
 
 * ``in nsIAbDirectory list``
+  The new mailing list to add.
 
 Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbDirectory``
+  The mailing list directory added, which may have been modified.
 
 editMailListToDatabase
 ----------------------
@@ -369,13 +349,12 @@ Edits an existing mailing list (specified as listCard) into its parent
 directory. You should call this function on the resource with the same
 uri as the listCard.
 
-@param  listCard  A nsIAbCard version of the mailing list with the new
-values.
-
 Parameters
 ^^^^^^^^^^
 
 * ``in nsIAbCard listCard``
+  A nsIAbCard version of the mailing list with the new
+  values.
 
 Return value
 ^^^^^^^^^^^^
@@ -400,18 +379,8 @@ getIntValue
 -----------
 
 @name  getXXXValue
-
 Helper functions to get different types of pref, but return a default
 value if a pref value was not obtained.
-
-@param aName         The name of the pref within the branch dirPrefId to
-get a value from.
-
-@param aDefaultValue The default value to return if getting the pref fails
-or the pref is not present.
-
-@return              The value of the pref or the default value.
-
 @exception           NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
 be obtained (e.g. dirPrefId isn't set).
 
@@ -425,6 +394,7 @@ Return value
 ^^^^^^^^^^^^
 
 * ``long``
+  The value of the pref or the default value.
 
 getBoolValue
 ------------
@@ -475,20 +445,12 @@ setIntValue
 -----------
 
 The following attributes are read from an nsIAbDirectory via the above methods:
-
 HidesRecipients (Boolean)
 If true, and this nsIAbDirectory is a mailing list, then when sending mail to
 this list, recipients addresses will be hidden from one another by sending
 via BCC.
 @name  setXXXValue
-
 Helper functions to set different types of pref values.
-
-@param aName         The name of the pref within the branch dirPrefId to
-get a value from.
-
-@param aValue        The value to set the pref to.
-
 @exception           NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
 be obtained (e.g. dirPrefId isn't set).
 

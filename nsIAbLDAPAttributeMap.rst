@@ -34,42 +34,37 @@ getAttributeList
 Get all the LDAP attributes associated with a given property
 name, in order of precedence (highest to lowest).
 
-@param       aProperty   the address book property to return attrs for
-
-@return      a comma-separated list of attributes, null if no entry is
-present
-
 Parameters
 ^^^^^^^^^^
 
 * ``in ACString aProperty``
+  the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
 * ``ACString``
+  a comma-separated list of attributes, null if no entry is
+  present
 
 getAttributes
 -------------
 
 Get all the LDAP attributes associated with a given property name, in
 order of precedence (highest to lowest).
-
-@param       aProperty   the address book property to return attrs for
-
-@return      an array of attributes
-
 @exception   NS_ERROR_FAILURE if there is no entry for this property
 
 Parameters
 ^^^^^^^^^^
 
 * ``in ACString aProperty``
+  the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
 * ``Array``
+  an array of attributes
 
 getFirstAttribute
 -----------------
@@ -77,37 +72,23 @@ getFirstAttribute
 Get the first (canonical) LDAP attribute associated with a given property
 name
 
-@param       aProperty   the address book property to return attrs for
-
-@return      the first attribute associated with a given property,
-null if there is no entry for this property
-
 Parameters
 ^^^^^^^^^^
 
 * ``in ACString aProperty``
+  the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
 * ``ACString``
+  the first attribute associated with a given property,
+  null if there is no entry for this property
 
 setAttributeList
 ----------------
 
 Set an existing mapping to the comma-separated list of attributes.
-
-@param aProperty               the mozilla addressbook property name
-
-@param aAttributeList          a comma-separated list of attributes in
-order of precedence from high to low
-
-@param aAllowInconsistencies   allow changes that would result in
-a map with an LDAP attribute associated
-with more than one property.  Useful for
-doing a bunch of sets at once, and
-calling checkState at the end.
-
 @exception NS_ERROR_FAILURE    making this change would result in a map
 with an LDAP attribute pointing to more
 than one property
@@ -130,8 +111,6 @@ getProperty
 Find the Mozilla addressbook property name that this attribute should
 map to.
 
-@return the addressbook property name, null if it's not used in the map
-
 Parameters
 ^^^^^^^^^^
 
@@ -141,6 +120,7 @@ Return value
 ^^^^^^^^^^^^
 
 * ``ACString``
+  the addressbook property name, null if it's not used in the map
 
 getAllCardAttributes
 --------------------
@@ -148,9 +128,6 @@ getAllCardAttributes
 Get all attributes that may be used in an addressbook card via this
 property map (used for passing to to an LDAP search when you want
 everything that could be in a card returned).
-
-@return                      a comma-separated list of attribute names
-
 @exception NS_ERROR_FAILURE  there are no attributes in this property map
 
 Parameters
@@ -161,15 +138,13 @@ Return value
 ^^^^^^^^^^^^
 
 * ``ACString``
+  a comma-separated list of attribute names
 
 getAllCardProperties
 --------------------
 
 Get all properties that may be used in an addressbook card via this
 property map.
-
-@return                      an array of properties
-
 @exception NS_ERROR_FAILURE  there are no attributes in this property map
 
 Parameters
@@ -180,12 +155,12 @@ Return value
 ^^^^^^^^^^^^
 
 * ``Array``
+  an array of properties
 
 checkState
 ----------
 
 Check that no LDAP attributes are listed in more than one property.
-
 @exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
 multiple times.  The object is now in an
 inconsistent state, and should be either
@@ -204,10 +179,6 @@ setFromPrefs
 ------------
 
 Set any attributes specified in the given prefbranch on this object.
-
-@param aPrefBranchName         the pref branch containing all the
-property names
-
 @exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
 multiple times.  The object is now in an
 inconsistent state, and should be either
@@ -228,10 +199,6 @@ setCardPropertiesFromLDAPMessage
 
 Set the properties on an addressbook card from the given LDAP message
 using the map in this object.
-
-@param       aCard is the card object whose values are to be set
-@param       aMessage is the LDAP message to get the values from
-
 @exception   NS_ERROR_FAILURE is thrown if no addressbook properties
 are found in the message
 
@@ -239,7 +206,9 @@ Parameters
 ^^^^^^^^^^
 
 * ``in nsILDAPMessage aMessage``
+  is the LDAP message to get the values from
 * ``in nsIAbCard aCard``
+  is the card object whose values are to be set
 
 Return value
 ^^^^^^^^^^^^

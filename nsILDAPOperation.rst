@@ -26,11 +26,6 @@ any actual operations.  Note that by default, the aMessageListener
 callbacks happen on the LDAP connection thread.  If you need them
 to happen on the main thread (or any other thread), then you should
 created an nsISupports proxy object and pass that in.
-
-@param aConnection       connection this operation should use
-@param aMessageListener  interface used to call back the results.
-@param aClosure          private parameter (anything caller desires)
-
 @exception NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
 @exception NS_ERROR_UNEXPECTED           failed to get connection handle
 
@@ -50,9 +45,6 @@ simpleBind
 ----------
 
 Asynchronously authenticate to the LDAP server.
-
-@param passwd    the password used for binding; NULL for anon-binds
-
 @exception NS_ERROR_LDAP_ENCODING_ERROR  problem encoding bind request
 @exception NS_ERROR_LDAP_SERVER_DOWN     server down (XXX rebinds?)
 @exception NS_ERROR_LDAP_CONNECT_ERROR   connection failed or lost
@@ -74,11 +66,6 @@ saslBind
 
 Asynchronously perform a SASL bind against the LDAP server
 
-@param service        the host name of the service being connected to
-@param mechanism      the name of the SASL mechanism in use
-@param authModuleType the type of auth module to be used to perform the operation
-
-
 Parameters
 ^^^^^^^^^^
 
@@ -95,10 +82,6 @@ saslStep
 --------
 
 Continue a SASL bind operation
-
-@param token     the next SASL token to send to the server
-@param tokenLen  the length of the token to send
-
 
 Parameters
 ^^^^^^^^^^
@@ -118,11 +101,6 @@ Kicks off an asynchronous add request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-
-@param aBaseDn           Base DN to add
-@param aModCount         Number of modifications
-@param aMods             Array of modifications
-
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_INVALID_ARG          invalid argument
 @exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
@@ -135,7 +113,6 @@ of the LDAP protocol that the
 client is using
 @exception NS_ERROR_UNEXPECTED           an unexpected error has
 occurred
-
 XXX doesn't currently handle LDAPControl params
 
 Parameters
@@ -156,9 +133,6 @@ Kicks off an asynchronous delete request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-
-@param aBaseDn           Base DN to delete
-
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_INVALID_ARG          invalid argument
 @exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
@@ -171,7 +145,6 @@ of the LDAP protocol that the
 client is using
 @exception NS_ERROR_UNEXPECTED           an unexpected error has
 occurred
-
 XXX doesn't currently handle LDAPControl params
 
 Parameters
@@ -191,11 +164,6 @@ Kicks off an asynchronous modify request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-
-@param aBaseDn           Base DN to modify
-@param aModCount         Number of modifications
-@param aMods             Array of modifications
-
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_INVALID_ARG          invalid argument
 @exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
@@ -208,7 +176,6 @@ of the LDAP protocol that the
 client is using
 @exception NS_ERROR_UNEXPECTED           an unexpected error has
 occurred
-
 XXX doesn't currently handle LDAPControl params
 
 Parameters
@@ -226,14 +193,6 @@ rename
 ------
 
 Kicks off an asynchronous rename request.
-
-@param aBaseDn           Base DN to rename
-@param aNewRDn           New relative DN
-@param aNewParent        DN of the new parent under which to move the
-entry
-@param aDeleteOldRDn     Indicates whether to remove the old relative
-DN as a value in the entry or not
-
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_INVALID_ARG          invalid argument
 @exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
@@ -246,7 +205,6 @@ of the LDAP protocol that the
 client is using
 @exception NS_ERROR_UNEXPECTED           an unexpected error has
 occurred
-
 XXX doesn't currently handle LDAPControl params
 
 Parameters
@@ -269,15 +227,6 @@ Kicks off an asynchronous search request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-
-@param aBaseDn           Base DN to search
-@param aScope            One of SCOPE_{BASE,ONELEVEL,SUBTREE}
-@param aFilter           Search filter
-@param aAttributes       Comma separated list of values, holding the
-attributes we need
-@param aTimeOut          How long to wait
-@param aSizeLimit        Maximum number of entries to return.
-
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
 @exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
@@ -310,9 +259,7 @@ abandonExt
 ----------
 
 Cancels an async operation that is in progress.
-
 XXX controls not supported yet
-
 @exception NS_ERROR_NOT_IMPLEMENTED      server or client controls
 were set on this object
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized

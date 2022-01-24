@@ -30,8 +30,6 @@ getEmailToUse
 Gets the email to use for the card within the result at the given index.
 This is the email that was matched against for the card where there are
 multiple email addresses on a card.
-
-@param index  Index of the autocomplete result to return the value for.
 @result       The email address to use from the card.
 
 Parameters

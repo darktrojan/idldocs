@@ -29,10 +29,6 @@ onLDAPMessage
 
 Messages from LDAP operations are passed back via this function.
 
-@param aMessage  The message that was returned, NULL if none was.
-
-XXX semantics of NULL?
-
 Parameters
 ^^^^^^^^^^
 
@@ -48,12 +44,6 @@ onLDAPError
 
 Indicates that an error has occured - either during init, or due to
 an LDAP operation.
-
-@param status   The error code.
-@param secInfo  The securityInfo object for the connection, if status
-is a security (NSS) error. Null otherwise.
-@param location If status is an NSS error code, this holds the location
-of the failed operation ("<host>:<port>").
 
 Parameters
 ^^^^^^^^^^

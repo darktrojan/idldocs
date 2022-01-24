@@ -59,26 +59,22 @@ getDirectory
 
 Returns the directory that represents the supplied URI.
 
-@param  aURI       The URI of the address book to find.
-@return            The found address book.
-
 Parameters
 ^^^^^^^^^^
 
 * ``in ACString aURI``
+  The URI of the address book to find.
 
 Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbDirectory``
+  The found address book.
 
 getDirectoryFromId
 ------------------
 
 Returns the directory that has the supplied dirPrefId.
-
-@param aDirPrefId  The dirPrefId of the directory.
-@return            The found AB directory.
 
 Parameters
 ^^^^^^^^^^
@@ -89,14 +85,12 @@ Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbDirectory``
+  The found AB directory.
 
 getDirectoryFromUID
 -------------------
 
 Returns the directory that has the supplied UID.
-
-@param aUID        The UID of the directory.
-@return            The found AB directory.
 
 Parameters
 ^^^^^^^^^^
@@ -107,26 +101,26 @@ Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbDirectory``
+  The found AB directory.
 
 newAddressBook
 --------------
 
 Creates a new address book.
 
-@param  aDirName   The description of the address book.
-@param  aURI       The URI for the address book. This is specific to each
-type of address book.
-@param  aType      One of the *_DIRECTORY_TYPE constants.
-@param  aPrefName  Overrides the default of ldap_2.servers.<aDirName>
-(note that the caller must ensure its uniqueness).
-
 Parameters
 ^^^^^^^^^^
 
 * ``in AString aDirName``
+  The description of the address book.
 * ``in ACString aURI``
+  The URI for the address book. This is specific to each
+  type of address book.
 * ``in unsigned long aType``
+  One of the *_DIRECTORY_TYPE constants.
 * ``in ACString aPrefName``
+  Overrides the default of ldap_2.servers.<aDirName>
+  (note that the caller must ensure its uniqueness).
 
 Return value
 ^^^^^^^^^^^^
@@ -138,8 +132,6 @@ addAddressBook
 
 Adds a previously created address book object. If it has not been removed
 (using `deleteAddressBook`) it will be removed at the end of the session.
-
-@param aDir The address book object.
 
 Parameters
 ^^^^^^^^^^
@@ -156,13 +148,12 @@ deleteAddressBook
 
 Deletes an address book.
 
-@param  aURI       The URI for the address book. This is specific to each
-type of address book.
-
 Parameters
 ^^^^^^^^^^
 
 * ``in ACString aURI``
+  The URI for the address book. This is specific to each
+  type of address book.
 
 Return value
 ^^^^^^^^^^^^
@@ -174,10 +165,6 @@ mailListNameExists
 
 Finds out if the mailing list name exists in any address book.
 
-@param  aName      The name of the list to try and find.
-
-@return            True if the name exists.
-
 Parameters
 ^^^^^^^^^^
 
@@ -187,16 +174,13 @@ Return value
 ^^^^^^^^^^^^
 
 * ``boolean``
+  True if the name exists.
 
 directoryNameExists
 -------------------
 
 Finds out if the directory name already exists.
 
-@param  aName      The name of a directory to check for.
-
-@return            True if a directory called name already exists.
-
 Parameters
 ^^^^^^^^^^
 
@@ -206,43 +190,39 @@ Return value
 ^^^^^^^^^^^^
 
 * ``boolean``
+  True if a directory called name already exists.
 
 cardForEmailAddress
 -------------------
 
 Returns an address book card for the specified email address if found, in
 any directory. The first matching card found is returned.
-
 *** Results of this function are cached! ***
 This function is for where speed is more important than accuracy. Results
 are stored in a cache until 60s passes without this function being called.
 The address book *could* change in this time, in a way that produces a
 different result, but probably won't.
-
 @see    nsIAbCard.cardForEmailAddress
-@param  emailAddress The email address to find in any of the email address
-fields. If emailAddress is empty, the directories
-won't be searched and the function will return as if
-no card was found.
-@return              An nsIAbCard if one was found, else returns NULL.
 
 Parameters
 ^^^^^^^^^^
 
 * ``in AUTF8String emailAddress``
+  The email address to find in any of the email address
+  fields. If emailAddress is empty, the directories
+  won't be searched and the function will return as if
+  no card was found.
 
 Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbCard``
+  An nsIAbCard if one was found, else returns NULL.
 
 getMailListFromName
 -------------------
 
 Returns the mailing lists that has the supplied name.
-
-@param aName       The name of the list.
-@return            The found AB directory.
 
 Parameters
 ^^^^^^^^^^
@@ -253,3 +233,4 @@ Return value
 ^^^^^^^^^^^^
 
 * ``nsIAbDirectory``
+  The found AB directory.
