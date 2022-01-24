@@ -9,6 +9,8 @@ Methods
 isLDIFFile
 ----------
 
+``boolean isLDIFFile(aSrc)``
+
 Determine if a file is likely to be an LDIF file based on field
 names that commonly appear in LDIF files.
 
@@ -29,6 +31,8 @@ Return value
 
 importLDIFFile
 --------------
+
+``void importLDIFFile(aDirectory, aSrc, aStoreLocAsHome, aProgress)``
 
 Imports a file into the specified address book.
 

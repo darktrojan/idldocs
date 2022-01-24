@@ -11,6 +11,8 @@ Methods
 getMapForPrefBranch
 -------------------
 
+``nsIAbLDAPAttributeMap getMapForPrefBranch(aPrefBranchName)``
+
 Accessor to construct or return a cached copy of the attribute
 map for a given preference branch.  The map is constructed by
 first taking the default map (as specified by the

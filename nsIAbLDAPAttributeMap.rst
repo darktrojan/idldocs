@@ -31,6 +31,8 @@ Methods
 getAttributeList
 ----------------
 
+``ACString getAttributeList(aProperty)``
+
 Get all the LDAP attributes associated with a given property
 name, in order of precedence (highest to lowest).
 
@@ -51,6 +53,8 @@ Return value
 
 getAttributes
 -------------
+
+``Array<ACString> getAttributes(aProperty)``
 
 Get all the LDAP attributes associated with a given property name, in
 order of precedence (highest to lowest).
@@ -73,6 +77,8 @@ Return value
 getFirstAttribute
 -----------------
 
+``ACString getFirstAttribute(aProperty)``
+
 Get the first (canonical) LDAP attribute associated with a given property
 name
 
@@ -94,6 +100,8 @@ Return value
 setAttributeList
 ----------------
 
+``void setAttributeList(aProperty, aAttributeList, allowInconsistencies)``
+
 Set an existing mapping to the comma-separated list of attributes.
 @exception NS_ERROR_FAILURE    making this change would result in a map
 with an LDAP attribute pointing to more
@@ -108,6 +116,8 @@ Parameters
 
 getProperty
 -----------
+
+``ACString getProperty(aAttribute)``
 
 Find the Mozilla addressbook property name that this attribute should
 map to.
@@ -127,6 +137,8 @@ Return value
 getAllCardAttributes
 --------------------
 
+``ACString getAllCardAttributes()``
+
 Get all attributes that may be used in an addressbook card via this
 property map (used for passing to to an LDAP search when you want
 everything that could be in a card returned).
@@ -142,6 +154,8 @@ Return value
 getAllCardProperties
 --------------------
 
+``Array<ACString> getAllCardProperties()``
+
 Get all properties that may be used in an addressbook card via this
 property map.
 @exception NS_ERROR_FAILURE  there are no attributes in this property map
@@ -156,6 +170,8 @@ Return value
 checkState
 ----------
 
+``void checkState()``
+
 Check that no LDAP attributes are listed in more than one property.
 @exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
 multiple times.  The object is now in an
@@ -164,6 +180,8 @@ manually repaired or discarded.
 
 setFromPrefs
 ------------
+
+``void setFromPrefs(aPrefBranchName)``
 
 Set any attributes specified in the given prefbranch on this object.
 @exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
@@ -178,6 +196,8 @@ Parameters
 
 setCardPropertiesFromLDAPMessage
 --------------------------------
+
+``void setCardPropertiesFromLDAPMessage(aMessage, aCard)``
 
 Set the properties on an addressbook card from the given LDAP message
 using the map in this object.

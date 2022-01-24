@@ -9,3 +9,4 @@ Methods
 initiate
 --------
 
+``void initiate()``

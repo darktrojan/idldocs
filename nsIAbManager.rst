@@ -51,11 +51,23 @@ ASYNC_DIRECTORY_TYPE
 **Value**: ``103``
 
 
+Properties
+==========
+
+directories
+-----------
+
+``readonly attribute Array<nsIAbDirectory> directories``
+
+Returns an array containing all the top-level directories.
+
 Methods
 =======
 
 getDirectory
 ------------
+
+``nsIAbDirectory getDirectory(aURI)``
 
 Returns the directory that represents the supplied URI.
 
@@ -76,6 +88,8 @@ Return value
 getDirectoryFromId
 ------------------
 
+``nsIAbDirectory getDirectoryFromId(aDirPrefId)``
+
 Returns the directory that has the supplied dirPrefId.
 
 Parameters
@@ -93,6 +107,8 @@ Return value
 getDirectoryFromUID
 -------------------
 
+``nsIAbDirectory getDirectoryFromUID(aUID)``
+
 Returns the directory that has the supplied UID.
 
 Parameters
@@ -109,6 +125,8 @@ Return value
 
 newAddressBook
 --------------
+
+``ACString newAddressBook(aDirName, aURI, aType, aPrefName)``
 
 Creates a new address book.
 
@@ -138,6 +156,8 @@ Return value
 addAddressBook
 --------------
 
+``void addAddressBook(aDir)``
+
 Adds a previously created address book object. If it has not been removed
 (using `deleteAddressBook`) it will be removed at the end of the session.
 
@@ -148,6 +168,8 @@ Parameters
 
 deleteAddressBook
 -----------------
+
+``void deleteAddressBook(aURI)``
 
 Deletes an address book.
 
@@ -161,6 +183,8 @@ Parameters
 
 mailListNameExists
 ------------------
+
+``boolean mailListNameExists(name)``
 
 Finds out if the mailing list name exists in any address book.
 
@@ -179,6 +203,8 @@ Return value
 directoryNameExists
 -------------------
 
+``boolean directoryNameExists(name)``
+
 Finds out if the directory name already exists.
 
 Parameters
@@ -195,6 +221,8 @@ Return value
 
 cardForEmailAddress
 -------------------
+
+``nsIAbCard cardForEmailAddress(emailAddress)``
 
 Returns an address book card for the specified email address if found, in
 any directory. The first matching card found is returned.
@@ -224,6 +252,8 @@ Return value
 
 getMailListFromName
 -------------------
+
+``nsIAbDirectory getMailListFromName(aName)``
 
 Returns the mailing lists that has the supplied name.
 

@@ -6,11 +6,31 @@ This interface is used to extend the nsIAutoCompleteResult interface to
 provide extra facilities for obtaining more details of the results of
 an address book search.
 
+Properties
+==========
+
+modelQuery
+----------
+
+``attribute AString modelQuery``
+
+The template used to build the query for this search. Optional.
+
+asyncDirectories
+----------------
+
+``attribute Array<nsIAbDirectory> asyncDirectories``
+
+Asynchronous address books that were unable to return full results.
+This means that they need to be requeried rather than simply filtered.
+
 Methods
 =======
 
 getCardAt
 ---------
+
+``nsIAbCard getCardAt(index)``
 
 Get the card from the result at the given index
 
@@ -26,6 +46,8 @@ Return value
 
 getEmailToUse
 -------------
+
+``AString getEmailToUse(index)``
 
 Gets the email to use for the card within the result at the given index.
 This is the email that was matched against for the card where there are
@@ -45,6 +67,8 @@ Return value
 
 isCompleteResult
 ----------------
+
+``bool isCompleteResult(index)``
 
 Indicates whether the source that returned this result returned a
 complete result for the query. If true, refining the search will not

@@ -9,6 +9,8 @@ Methods
 doQuery
 -------
 
+``long doQuery(aDirectory, aArguments, aListener, aResultLimit, aTimeOut)``
+
 Initiates a query on a directory and sub-directories for properties
 on cards
 
@@ -30,6 +32,8 @@ Return value
 
 stopQuery
 ---------
+
+``void stopQuery(contextID)``
 
 Stops an existing query operation if
 query operation is asynchronous

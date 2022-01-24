@@ -9,6 +9,7 @@ Methods
 getFolderURIs
 -------------
 
+``Array<ACString> getFolderURIs(aURI)``
 
 Parameters
 ^^^^^^^^^^

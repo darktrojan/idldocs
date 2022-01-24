@@ -78,11 +78,97 @@ GENERATE_FIRST_LAST_ORDER
 **Value**: ``2``
 
 
+Properties
+==========
+
+directoryUID
+------------
+
+``attribute AUTF8String directoryUID``
+
+The UID for the nsIAbDirectory containing this card.
+
+The directory considered to contain this card is the directory which
+produced this card (e.g., through nsIAbDirectory::getCardForProperty) or
+the last directory to modify this card, if another directory did so. If the
+last directory to modify this card deleted it, then this card is considered
+unassociated.
+
+If this card is not associated with a directory, this string will be empty.
+
+There is no standardized way to associate a card with multiple directories.
+
+Consumers of this interface outside of directory implementations SHOULD
+NOT, in general, modify this property.
+
+UID
+---
+
+``attribute AUTF8String UID``
+
+A 128-bit unique identifier for this card. This can only be set if it is not
+already set. The getter sets a value if there is not one.
+
+properties
+----------
+
+``readonly attribute Array<nsIProperty> properties``
+
+A list of all the properties that this card has as an enumerator, whose
+members are all nsIProperty objects.
+
+firstName
+---------
+
+``attribute AString firstName``
+
+@{
+These properties are shorthand for getProperty and setProperty.
+
+lastName
+--------
+
+``attribute AString lastName``
+
+displayName
+-----------
+
+``attribute AString displayName``
+
+primaryEmail
+------------
+
+``attribute AString primaryEmail``
+
+emailAddresses
+--------------
+
+``readonly attribute Array<AString> emailAddresses``
+
+@} */
+All email addresses associated with this card, in order of preference.
+
+isMailList
+----------
+
+``attribute boolean isMailList``
+
+mailListURI
+-----------
+
+``attribute string mailListURI``
+
+If isMailList is true then mailListURI
+will contain the URI of the associated
+mail list
+
 Methods
 =======
 
 generateName
 ------------
+
+``AString generateName(aGenerateFormat, aBundle)``
 
 @} */
 Generate a name from the item for display purposes.
@@ -118,6 +204,8 @@ Return value
 getProperty
 -----------
 
+``nsIVariant getProperty(name, defaultValue)``
+
 Returns a property for the given name.
 @exception NS_ERROR_NOT_AVAILABLE if the named property does not exist.
 @exception NS_ERROR_CANNOT_CONVERT_DATA if the property cannot be converted
@@ -136,6 +224,8 @@ Return value
 
 getPropertyAsAString
 --------------------
+
+``AString getPropertyAsAString(name)``
 
 @{
 Returns a property for the given name.  Javascript callers should NOT use these,
@@ -161,6 +251,7 @@ Return value
 getPropertyAsAUTF8String
 ------------------------
 
+``AUTF8String getPropertyAsAUTF8String(name)``
 
 Parameters
 ^^^^^^^^^^
@@ -175,6 +266,7 @@ Return value
 getPropertyAsUint32
 -------------------
 
+``unsigned long getPropertyAsUint32(name)``
 
 Parameters
 ^^^^^^^^^^
@@ -189,6 +281,7 @@ Return value
 getPropertyAsBool
 -----------------
 
+``boolean getPropertyAsBool(name)``
 
 Parameters
 ^^^^^^^^^^
@@ -202,6 +295,8 @@ Return value
 
 setProperty
 -----------
+
+``void setProperty(name, value)``
 
 @} */
 Assigns the given to value to the property of the given name.
@@ -221,6 +316,8 @@ Parameters
 setPropertyAsAString
 --------------------
 
+``void setPropertyAsAString(name, value)``
+
 @{
 Sets a property for the given name.  Javascript callers should NOT use these,
 but use setProperty instead. XPConnect will do the type conversion automagically.
@@ -236,6 +333,7 @@ Parameters
 setPropertyAsAUTF8String
 ------------------------
 
+``void setPropertyAsAUTF8String(name, value)``
 
 Parameters
 ^^^^^^^^^^
@@ -246,6 +344,7 @@ Parameters
 setPropertyAsUint32
 -------------------
 
+``void setPropertyAsUint32(name, value)``
 
 Parameters
 ^^^^^^^^^^
@@ -256,6 +355,7 @@ Parameters
 setPropertyAsBool
 -----------------
 
+``void setPropertyAsBool(name, value)``
 
 Parameters
 ^^^^^^^^^^
@@ -265,6 +365,8 @@ Parameters
 
 deleteProperty
 --------------
+
+``void deleteProperty(name)``
 
 @} */
 Deletes the property with the given name.
@@ -279,6 +381,8 @@ Parameters
 
 hasEmailAddress
 ---------------
+
+``boolean hasEmailAddress(aEmailAddress)``
 
 Determines whether or not a card has the supplied email address in either
 of its PrimaryEmail or SecondEmail attributes.
@@ -302,6 +406,8 @@ Return value
 
 translateTo
 -----------
+
+``AUTF8String translateTo(aType)``
 
 Translates a card into a specific format.
 The following types are supported:
@@ -327,6 +433,8 @@ Return value
 generatePhoneticName
 --------------------
 
+``AString generatePhoneticName(aLastNameFirst)``
+
 Translates a card from the specified format
 Generate a phonetic name from the card, using the firstName and lastName
 values.
@@ -348,6 +456,8 @@ Return value
 generateChatName
 ----------------
 
+``AString generateChatName()``
+
 Generate a chat name from the card, containing the value of the
 first non-empty chat field.
 
@@ -361,6 +471,8 @@ Return value
 copy
 ----
 
+``void copy(aSrcCard)``
+
 This function will copy all values from one card to another.
 
 Parameters
@@ -370,6 +482,8 @@ Parameters
 
 equals
 ------
+
+``boolean equals(aCard)``
 
 Returns true if this card is equal to the other card.
 The default implementation defines equal as this card pointing to the

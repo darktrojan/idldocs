@@ -12,11 +12,15 @@ Methods
 onLDAPInit
 ----------
 
+``void onLDAPInit()``
+
 Invoked when Init has completed successfully LDAP operations can
 proceed.
 
 onLDAPMessage
 -------------
+
+``void onLDAPMessage(aMessage)``
 
 Messages from LDAP operations are passed back via this function.
 
@@ -27,6 +31,8 @@ Parameters
 
 onLDAPError
 -----------
+
+``void onLDAPError(status, secInfo, location)``
 
 Indicates that an error has occured - either during init, or due to
 an LDAP operation.

@@ -9,6 +9,8 @@ Methods
 queryAuthDN
 -----------
 
+``void queryAuthDN(aValueUsedToFindDn)``
+
 Starts an LDAP query to find auth DN
 
 Parameters
@@ -19,10 +21,14 @@ Parameters
 queryRootDSE
 ------------
 
+``void queryRootDSE()``
+
 Starts an LDAP query to search server's Root DSE
 
 queryChangeLog
 --------------
+
+``void queryChangeLog(aChangeLogDN, aLastChangeNo)``
 
 Starts an LDAP ChangeLog query to find changelog entries
 
@@ -34,6 +40,8 @@ Parameters
 
 queryChangedEntries
 -------------------
+
+``void queryChangedEntries(aChangedEntryDN)``
 
 Starts an LDAP query to find changed entries
 

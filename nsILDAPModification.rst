@@ -42,11 +42,37 @@ MOD_BVALUES
 
 Values are BER encoded
 
+Properties
+==========
+
+operation
+---------
+
+``attribute long operation``
+
+The operation to perform.
+
+type
+----
+
+``attribute ACString type``
+
+The attribute to modify.
+
+values
+------
+
+``attribute Array<nsILDAPBERValue> values``
+
+The array of values this modification sets for the attribute
+
 Methods
 =======
 
 setUpModification
 -----------------
+
+``void setUpModification(aOperation, aType, aValues)``
 
 Function that allows all the attributes to be set at the same
 time to avoid multiple function calls.
@@ -61,6 +87,7 @@ Parameters
 setUpModificationOneValue
 -------------------------
 
+``void setUpModificationOneValue(aOperation, aType, aValue)``
 
 Parameters
 ^^^^^^^^^^

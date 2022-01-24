@@ -10,6 +10,8 @@ Methods
 init
 ----
 
+``void init(aDirectory, aProgressListener)``
+
 initialize for the query
 
 Parameters
@@ -21,15 +23,21 @@ Parameters
 doReplicationQuery
 ------------------
 
+``void doReplicationQuery()``
+
 Starts an LDAP query to do replication as needed
 
 cancelQuery
 -----------
 
+``void cancelQuery()``
+
 Cancels the currently executing query
 
 done
 ----
+
+``void done(aSuccess)``
 
 this method is the callback when query is done, failed or successful
 

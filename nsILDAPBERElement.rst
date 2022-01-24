@@ -154,11 +154,26 @@ TAG_LBER_SET
 **Value**: ``49``
 
 
+Properties
+==========
+
+asValue
+-------
+
+``readonly attribute nsILDAPBERValue asValue``
+
+an nsILDAPBERValue version of this element.  Calls ber_flatten() under
+the hood.
+
+@exception NS_ERROR_OUT_OF_MEMORY
+
 Methods
 =======
 
 init
 ----
+
+``void init(aValue)``
 
 Initialize this object.  Must be called before calling any other method
 on this interface.
@@ -176,6 +191,8 @@ Parameters
 
 putString
 ---------
+
+``unsigned long putString(aString, aTag)``
 
 Write a string to this element.
 @exception  NS_ERROR_FAILUE   C-SDK returned error
@@ -201,6 +218,8 @@ Return value
 startSet
 --------
 
+``void startSet(aTag)``
+
 Start a set.  Sets may be nested.
 @exception  NS_ERROR_FAILUE   C-SDK returned an error
 
@@ -214,6 +233,8 @@ Parameters
 
 putSet
 ------
+
+``unsigned long putSet()``
 
 Cause the entire set started by the last startSet() call to be written.
 @exception  NS_ERROR_FAILUE   C-SDK returned an error

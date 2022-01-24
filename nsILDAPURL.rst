@@ -47,11 +47,64 @@ OPT_SECURE
 
 If this is set/true, this is an ldaps: URL, not an ldap: URL
 
+Properties
+==========
+
+dn
+--
+
+``attribute AUTF8String dn``
+
+The distinguished name of the URL (ie the base DN for the search).
+This string is expected to be a valid UTF8 string.
+
+for the getter:
+
+@exception NS_ERROR_NULL_POINTER     NULL pointer to GET method
+@exception NS_ERROR_OUT_OF_MEMORY    Ran out of memory
+
+attributes
+----------
+
+``attribute ACString attributes``
+
+The attributes to get for this URL, in comma-separated format. If the
+list is empty, all attributes are requested.
+
+scope
+-----
+
+``attribute long scope``
+
+The scope of the search.  defaults to SCOPE_BASE.
+
+@exception NS_ERROR_NULL_POINTER     NULL pointer to GET method
+@exception NS_ERROR_MALFORMED_URI    Illegal base to SET method
+
+filter
+------
+
+``attribute AUTF8String filter``
+
+The search filter. "(objectClass=*)" is the default.
+
+options
+-------
+
+``attribute unsigned long options``
+
+Any options defined for this URL (check options using a bitwise and)
+
+@exception NS_ERROR_NULL_POINTER     NULL pointer to GET method
+@exception NS_ERROR_OUT_OF_MEMORY    Ran out of memory
+
 Methods
 =======
 
 init
 ----
+
+``void init(aUrlType, aDefaultPort, aSpec, aOriginCharset, aBaseURI)``
 
 Initialize an LDAP URL
 
@@ -67,6 +120,8 @@ Parameters
 addAttribute
 ------------
 
+``void addAttribute(aAttribute)``
+
 Add one attribute to the array of attributes to request. If the
 attribute is already in our array, this becomes a noop.
 
@@ -77,6 +132,8 @@ Parameters
 
 removeAttribute
 ---------------
+
+``void removeAttribute(aAttribute)``
 
 Remove one attribute from the array of attributes to request. If
 the attribute didn't exist in the array, this becomes a noop.
@@ -89,6 +146,8 @@ Parameters
 
 hasAttribute
 ------------
+
+``boolean hasAttribute(aAttribute)``
 
 Test if an attribute is in our list of attributes already
 @exception NS_ERROR_NULL_POINTER     NULL pointer to GET method

@@ -15,11 +15,73 @@ NO_LIMIT
 
 No time and/or size limit specified
 
+Properties
+==========
+
+connection
+----------
+
+``readonly attribute nsILDAPConnection connection``
+
+The connection this operation is on.
+
+@exception NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
+
+messageListener
+---------------
+
+``readonly attribute nsILDAPMessageListener messageListener``
+
+Callback for individual result messages related to this operation (set
+by the init() method).  This is actually an nsISupports proxy object,
+as the callback will happen from another thread.
+
+@exception NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
+
+messageID
+---------
+
+``readonly attribute long messageID``
+
+The message-id associated with this operation.
+
+@exception NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
+
+closure
+-------
+
+``attribute nsISupports closure``
+
+private parameter (anything caller desires)
+
+requestNum
+----------
+
+``attribute unsigned long requestNum``
+
+number of the request for compare that the request is still valid.
+
+serverControls
+--------------
+
+``attribute Array<nsILDAPControl> serverControls``
+
+If specified, these arrays of nsILDAPControls are passed into the LDAP
+C SDK for any extended operations (ie method calls on this interface
+ending in "Ext").
+
+clientControls
+--------------
+
+``attribute Array<nsILDAPControl> clientControls``
+
 Methods
 =======
 
 init
 ----
+
+``void init(aConnection, aMessageListener, aClosure)``
 
 Initializes this operation.  Must be called prior to initiating
 any actual operations.  Note that by default, the aMessageListener
@@ -39,6 +101,8 @@ Parameters
 simpleBind
 ----------
 
+``void simpleBind(passwd)``
+
 Asynchronously authenticate to the LDAP server.
 @exception NS_ERROR_LDAP_ENCODING_ERROR  problem encoding bind request
 @exception NS_ERROR_LDAP_SERVER_DOWN     server down (XXX rebinds?)
@@ -54,6 +118,8 @@ Parameters
 saslBind
 --------
 
+``void saslBind(service, mechanism, authModuleType)``
+
 Asynchronously perform a SASL bind against the LDAP server
 
 Parameters
@@ -66,6 +132,8 @@ Parameters
 saslStep
 --------
 
+``void saslStep(token, tokenLen)``
+
 Continue a SASL bind operation
 
 Parameters
@@ -76,6 +144,8 @@ Parameters
 
 addExt
 ------
+
+``void addExt(aBaseDn, aMods)``
 
 Kicks off an asynchronous add request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
@@ -104,6 +174,8 @@ Parameters
 deleteExt
 ---------
 
+``void deleteExt(aBaseDn)``
+
 Kicks off an asynchronous delete request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
@@ -129,6 +201,8 @@ Parameters
 
 modifyExt
 ---------
+
+``void modifyExt(aBaseDn, aMods)``
 
 Kicks off an asynchronous modify request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
@@ -157,6 +231,8 @@ Parameters
 rename
 ------
 
+``void rename(aBaseDn, aNewRDn, aNewParent, aDeleteOldRDn)``
+
 Kicks off an asynchronous rename request.
 @exception NS_ERROR_NOT_INITIALIZED      operation not initialized
 @exception NS_ERROR_INVALID_ARG          invalid argument
@@ -182,6 +258,8 @@ Parameters
 
 searchExt
 ---------
+
+``void searchExt(aBaseDn, aScope, aFilter, aAttributes, aTimeOut, aSizeLimit)``
 
 Kicks off an asynchronous search request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
@@ -212,6 +290,8 @@ Parameters
 
 abandonExt
 ----------
+
+``void abandonExt()``
 
 Cancels an async operation that is in progress.
 XXX controls not supported yet

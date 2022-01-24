@@ -12,6 +12,8 @@ Methods
 collectAddress
 --------------
 
+``void collectAddress(aAddresses, aCreateCard, aSendFormat)``
+
 Collects email addresses into the address book.
 If a card already exists for the email, the first/last/display names
 will be updated if they are supplied alongside the address.
@@ -38,6 +40,8 @@ Parameters
 
 collectSingleAddress
 --------------------
+
+``void collectSingleAddress(aEmail, aDisplayName, aCreateCard, aSendFormat, aSkipCheckExisting)``
 
 Collects a single name and email address into the address book.
 By default, it saves the address without checking for an existing one.

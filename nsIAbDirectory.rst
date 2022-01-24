@@ -15,11 +15,141 @@ the SQLite-based address book type is:
 
 @mozilla.org/addressbook/directory;1?type=jsaddrbook
 
+Properties
+==========
+
+readOnly
+--------
+
+``readonly attribute boolean readOnly``
+
+Returns true if this collection is read-only.
+
+isRemote
+--------
+
+``readonly attribute boolean isRemote``
+
+Returns true if this collection is accessed over a network connection.
+
+isSecure
+--------
+
+``readonly attribute boolean isSecure``
+
+Returns true if this collection is accessed over a secure connection.
+
+If isRemote returns false, then this value MUST be false as well.
+
+propertiesChromeURI
+-------------------
+
+``readonly attribute ACString propertiesChromeURI``
+
+The chrome URI to use for bringing up a dialog to edit this directory.
+When opening the dialog, use a JS argument of
+{selectedDirectory: thisdir} where thisdir is this directory that you just
+got the chrome URI from.
+
+dirName
+-------
+
+``attribute AString dirName``
+
+The description of the directory. If this directory is not a mailing list,
+then setting this attribute will send round a "DirName" update via
+nsIAddrBookSession.
+
+dirType
+-------
+
+``readonly attribute long dirType``
+
+fileName
+--------
+
+``readonly attribute ACString fileName``
+
+UID
+---
+
+``readonly attribute AUTF8String UID``
+
+A 128-bit unique identifier for this directory.
+
+URI
+---
+
+``readonly attribute ACString URI``
+
+position
+--------
+
+``readonly attribute long position``
+
+lastModifiedDate
+----------------
+
+``attribute unsigned long lastModifiedDate``
+
+isMailList
+----------
+
+``attribute boolean isMailList``
+
+childNodes
+----------
+
+``readonly attribute Array<nsIAbDirectory> childNodes``
+
+childCards
+----------
+
+``readonly attribute Array<nsIAbCard> childCards``
+
+Get the cards associated with the directory. This will return the cards
+associated with the mailing lists too.
+
+supportsMailingLists
+--------------------
+
+``readonly attribute boolean supportsMailingLists``
+
+Does this directory support mailing lists? Note that in the case
+this directory is a mailing list and nested mailing lists are not
+supported, this will return false rather than true which the parent
+directory might.
+
+listNickName
+------------
+
+``attribute AString listNickName``
+
+Nick Name of the mailing list. This attribute is only really used when
+the nsIAbDirectory represents a mailing list.
+
+description
+-----------
+
+``attribute AString description``
+
+Description of the mailing list. This attribute is only really used when
+the nsIAbDirectory represents a mailing list.
+
+dirPrefId
+---------
+
+``readonly attribute ACString dirPrefId``
+
+The id of the directory used in prefs e.g. "ldap_2.servers.pab"
+
 Methods
 =======
 
 cardForEmailAddress
 -------------------
+
+``nsIAbCard cardForEmailAddress(emailAddress)``
 
 Returns an address book card for the specified email address if found.
 If there are multiple cards with the given email address, this method will
@@ -48,6 +178,8 @@ Return value
 
 getCardFromProperty
 -------------------
+
+``nsIAbCard getCardFromProperty(aProperty, aValue, aCaseSensitive)``
 
 Returns an address book card for the specified property if found.
 If there are multiple cards with the given value for the property, this
@@ -83,6 +215,8 @@ Return value
 getCardsFromProperty
 --------------------
 
+``Array<nsIAbCard> getCardsFromProperty(aProperty, aValue, aCaseSensitive)``
+
 Returns all address book cards with a specific property matching value
 This function is almost identical to getCardFromProperty, with the
 exception of returning all cards rather than just the first.
@@ -110,6 +244,8 @@ Return value
 getMailListFromName
 -------------------
 
+``nsIAbDirectory getMailListFromName(aName)``
+
 Returns the nsIAbDirectory for a mailing list with the specified name.
 
 Parameters
@@ -125,6 +261,7 @@ Return value
 setUID
 ------
 
+``void setUID(aUID)``
 
 Parameters
 ^^^^^^^^^^
@@ -133,6 +270,8 @@ Parameters
 
 search
 ------
+
+``void search(query, searchString, listener)``
 
 Searches the directory for cards matching query.
 The query takes the form:
@@ -156,6 +295,8 @@ Parameters
 init
 ----
 
+``void init(aURI)``
+
 Initializes a directory, pointing to a particular URI.
 
 Parameters
@@ -165,6 +306,8 @@ Parameters
 
 cleanUp
 -------
+
+``Promise cleanUp()``
 
 Clean up any database connections or open file handles.
 Called at shutdown or if the directory is about to be deleted.
@@ -177,6 +320,7 @@ Return value
 deleteDirectory
 ---------------
 
+``void deleteDirectory(directory)``
 
 Parameters
 ^^^^^^^^^^
@@ -186,6 +330,7 @@ Parameters
 hasCard
 -------
 
+``boolean hasCard(cards)``
 
 Parameters
 ^^^^^^^^^^
@@ -200,6 +345,7 @@ Return value
 hasDirectory
 ------------
 
+``boolean hasDirectory(dir)``
 
 Parameters
 ^^^^^^^^^^
@@ -214,6 +360,7 @@ Return value
 hasMailListWithName
 -------------------
 
+``boolean hasMailListWithName(aName)``
 
 Parameters
 ^^^^^^^^^^
@@ -227,6 +374,8 @@ Return value
 
 addCard
 -------
+
+``nsIAbCard addCard(card)``
 
 Adds a card to the database.
 This card does not need to be of the same type as the database, e.g., one
@@ -248,6 +397,8 @@ Return value
 modifyCard
 ----------
 
+``void modifyCard(modifiedCard)``
+
 Modifies a card in the database to match that supplied.
 
 Parameters
@@ -257,6 +408,8 @@ Parameters
 
 deleteCards
 -----------
+
+``void deleteCards(aCards)``
 
 Deletes the array of cards from the database.
 
@@ -270,6 +423,7 @@ Parameters
 dropCard
 --------
 
+``void dropCard(card, needToCopyCard)``
 
 Parameters
 ^^^^^^^^^^
@@ -279,6 +433,8 @@ Parameters
 
 useForAutocomplete
 ------------------
+
+``boolean useForAutocomplete(aIdentityKey)``
 
 Whether or not the directory should be searched when doing autocomplete,
 (currently by using GetChildCards); LDAP does not support this in online
@@ -301,6 +457,8 @@ Return value
 addMailList
 -----------
 
+``nsIAbDirectory addMailList(list)``
+
 Creates a new mailing list in the directory. Currently only supported
 for top-level directories.
 
@@ -321,6 +479,8 @@ Return value
 editMailListToDatabase
 ----------------------
 
+``void editMailListToDatabase(listCard)``
+
 Edits an existing mailing list (specified as listCard) into its parent
 directory. You should call this function on the resource with the same
 uri as the listCard.
@@ -336,6 +496,7 @@ Parameters
 copyMailList
 ------------
 
+``void copyMailList(srcList)``
 
 Parameters
 ^^^^^^^^^^
@@ -344,6 +505,8 @@ Parameters
 
 getIntValue
 -----------
+
+``long getIntValue(aName, aDefaultValue)``
 
 @name  getXXXValue
 Helper functions to get different types of pref, but return a default
@@ -367,6 +530,7 @@ Return value
 getBoolValue
 ------------
 
+``boolean getBoolValue(aName, aDefaultValue)``
 
 Parameters
 ^^^^^^^^^^
@@ -382,6 +546,7 @@ Return value
 getStringValue
 --------------
 
+``ACString getStringValue(aName, aDefaultValue)``
 
 Parameters
 ^^^^^^^^^^
@@ -397,6 +562,7 @@ Return value
 getLocalizedStringValue
 -----------------------
 
+``AUTF8String getLocalizedStringValue(aName, aDefaultValue)``
 
 Parameters
 ^^^^^^^^^^
@@ -411,6 +577,8 @@ Return value
 
 setIntValue
 -----------
+
+``void setIntValue(aName, aValue)``
 
 The following attributes are read from an nsIAbDirectory via the above methods:
 HidesRecipients (Boolean)
@@ -431,6 +599,7 @@ Parameters
 setBoolValue
 ------------
 
+``void setBoolValue(aName, aValue)``
 
 Parameters
 ^^^^^^^^^^
@@ -441,6 +610,7 @@ Parameters
 setStringValue
 --------------
 
+``void setStringValue(aName, aValue)``
 
 Parameters
 ^^^^^^^^^^
@@ -451,6 +621,7 @@ Parameters
 setLocalizedStringValue
 -----------------------
 
+``void setLocalizedStringValue(aName, aValue)``
 
 Parameters
 ^^^^^^^^^^

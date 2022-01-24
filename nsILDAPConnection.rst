@@ -22,11 +22,39 @@ VERSION3
 **Value**: ``3``
 
 
+Properties
+==========
+
+errorString
+-----------
+
+``readonly attribute wstring errorString``
+
+the string version of lderrno
+
+bindName
+--------
+
+``readonly attribute AUTF8String bindName``
+
+DN to bind as.  use the init() method to set this.
+
+@exception NS_ERROR_OUT_OF_MEMORY
+
+closure
+-------
+
+``attribute nsISupports closure``
+
+private parameter (anything caller desires)
+
 Methods
 =======
 
 init
 ----
+
+``void init(aUrl, aBindName, aMessageListener, aClosure, aVersion)``
 
 Set up the connection.  Note that init() must be called on a thread
 that already has an nsIEventQueue.
@@ -47,6 +75,8 @@ Parameters
 
 getLdErrno
 ----------
+
+``long getLdErrno(matched, s)``
 
 Get information about the last error that occurred on this connection.
 

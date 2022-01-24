@@ -104,11 +104,23 @@ kReplicationDone
 **Value**: ``11``
 
 
+Properties
+==========
+
+replicationState
+----------------
+
+``readonly attribute int32_t replicationState``
+
+readonly attribute giving the current replication state
+
 Methods
 =======
 
 init
 ----
+
+``void init(directory, connection, url, query, progressListener)``
 
 this method initializes the implementation
 
@@ -123,5 +135,7 @@ Parameters
 
 abort
 -----
+
+``void abort()``
 
 this method a aborts the ongoing processing

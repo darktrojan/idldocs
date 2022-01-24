@@ -10,6 +10,8 @@ Methods
 parse
 -----
 
+``nsILDAPURLParserResult parse(aSpec)``
+
 Parse a string to an LDAP URL.
 
 Parameters

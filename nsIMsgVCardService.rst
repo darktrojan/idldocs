@@ -9,6 +9,8 @@ Methods
 vCardToAbCard
 -------------
 
+``nsIAbCard vCardToAbCard(vCardStr)``
+
 Translates a vCard string into a nsIAbCard.
 
 Parameters
@@ -26,6 +28,8 @@ Return value
 escapedVCardToAbCard
 --------------------
 
+``nsIAbCard escapedVCardToAbCard(escapedVCardStr)``
+
 Translates an URL-encoded vCard string into a nsIAbCard.
 
 Parameters
@@ -42,6 +46,8 @@ Return value
 
 abCardToEscapedVCard
 --------------------
+
+``AString abCardToEscapedVCard(abCard)``
 
 Translates a nsIAbCard into an URL-encoded vCard.
 

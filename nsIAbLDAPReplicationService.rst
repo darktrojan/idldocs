@@ -10,6 +10,8 @@ Methods
 startReplication
 ----------------
 
+``void startReplication(aDirectory, progressListener)``
+
 Start Replication of given LDAP directory represented by the URI
 
 Parameters
@@ -21,6 +23,8 @@ Parameters
 cancelReplication
 -----------------
 
+``void cancelReplication(aDirectory)``
+
 Cancel Replication of given LDAP directory represented by the URI
 
 Parameters
@@ -30,6 +34,8 @@ Parameters
 
 done
 ----
+
+``void done(aSuccess)``
 
 callback when replication is done, failure or success
 

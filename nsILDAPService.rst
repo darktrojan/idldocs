@@ -11,6 +11,8 @@ Methods
 createFilter
 ------------
 
+``AUTF8String createFilter(aMaxSize, aPattern, aPrefix, aSuffix, aAttr, aValue)``
+
 Generates and returns an LDAP search filter by substituting
 aValue, aAttr, aPrefix, and aSuffix into aPattern.
 Exposes the functionality of ldap_create_filter() via XPCOM.

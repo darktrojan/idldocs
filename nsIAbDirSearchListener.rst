@@ -10,6 +10,8 @@ Methods
 onSearchFoundCard
 -----------------
 
+``void onSearchFoundCard(aCard)``
+
 Invoked for each matching result found by the search.
 
 Parameters
@@ -19,6 +21,8 @@ Parameters
 
 onSearchFinished
 ----------------
+
+``void onSearchFinished(status, complete, secInfo, location)``
 
 Invoked when the search finishes.
 
