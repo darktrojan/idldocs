@@ -15,16 +15,17 @@ on cards
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory aDirectory``
-* ``in nsIAbDirectoryQueryArguments aArguments``
-* ``in nsIAbDirSearchListener aListener``
-* ``in long aResultLimit``
-* ``in long aTimeOut``
+* in :doc:`nsIAbDirectory` aDirectory
+* in :doc:`nsIAbDirectoryQueryArguments` aArguments
+* in :doc:`nsIAbDirSearchListener` aListener
+* in long aResultLimit
+* in long aTimeOut
 
 Return value
 ^^^^^^^^^^^^
 
-* ``long``
+* long
+
   A context id for the query
 
 stopQuery
@@ -40,9 +41,4 @@ synchronous or asynchronous
 Parameters
 ^^^^^^^^^^
 
-* ``in long contextID``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in long contextID

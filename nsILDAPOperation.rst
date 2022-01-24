@@ -32,14 +32,9 @@ created an nsISupports proxy object and pass that in.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsILDAPConnection aConnection``
-* ``in nsILDAPMessageListener aMessageListener``
-* ``in nsISupports aClosure``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsILDAPConnection` aConnection
+* in :doc:`nsILDAPMessageListener` aMessageListener
+* in :doc:`nsISupports` aClosure
 
 simpleBind
 ----------
@@ -54,12 +49,7 @@ Asynchronously authenticate to the LDAP server.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String passwd``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String passwd
 
 saslBind
 --------
@@ -69,14 +59,9 @@ Asynchronously perform a SASL bind against the LDAP server
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString service``
-* ``in ACString mechanism``
-* ``in ACString authModuleType``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in ACString service
+* in ACString mechanism
+* in ACString authModuleType
 
 saslStep
 --------
@@ -86,13 +71,8 @@ Continue a SASL bind operation
 Parameters
 ^^^^^^^^^^
 
-* ``in string token``
-* ``in unsigned long tokenLen``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string token
+* in unsigned long tokenLen
 
 addExt
 ------
@@ -118,13 +98,8 @@ XXX doesn't currently handle LDAPControl params
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aBaseDn``
-* ``in Array<nsILDAPModification> aMods``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aBaseDn
+* in Array<:doc:`nsILDAPModification`> aMods
 
 deleteExt
 ---------
@@ -150,12 +125,7 @@ XXX doesn't currently handle LDAPControl params
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aBaseDn``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aBaseDn
 
 modifyExt
 ---------
@@ -181,13 +151,8 @@ XXX doesn't currently handle LDAPControl params
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aBaseDn``
-* ``in Array<nsILDAPModification> aMods``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aBaseDn
+* in Array<:doc:`nsILDAPModification`> aMods
 
 rename
 ------
@@ -210,15 +175,10 @@ XXX doesn't currently handle LDAPControl params
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aBaseDn``
-* ``in AUTF8String aNewRDn``
-* ``in AUTF8String aNewParent``
-* ``in boolean aDeleteOldRDn``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aBaseDn
+* in AUTF8String aNewRDn
+* in AUTF8String aNewParent
+* in boolean aDeleteOldRDn
 
 searchExt
 ---------
@@ -243,17 +203,12 @@ client is using
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aBaseDn``
-* ``in int32_t aScope``
-* ``in AUTF8String aFilter``
-* ``in ACString aAttributes``
-* ``in PRIntervalTime aTimeOut``
-* ``in int32_t aSizeLimit``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aBaseDn
+* in int32_t aScope
+* in AUTF8String aFilter
+* in ACString aAttributes
+* in PRIntervalTime aTimeOut
+* in int32_t aSizeLimit
 
 abandonExt
 ----------
@@ -270,12 +225,3 @@ connection was lost
 @exception NS_ERROR_OUT_OF_MEMORY        out of memory
 @exception NS_ERROR_INVALID_ARG          invalid argument
 @exception NS_ERROR_UNEXPECTED           internal error
-
-Parameters
-^^^^^^^^^^
-
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``

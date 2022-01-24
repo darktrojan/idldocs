@@ -16,11 +16,12 @@ the results.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsILDAPURL aServerURL``
-* ``in unsigned long aProtocolVersion``
+* in :doc:`nsILDAPURL` aServerURL
+* in unsigned long aProtocolVersion
 
 Return value
 ^^^^^^^^^^^^
 
-* ``wstring``
+* wstring
+
   results

@@ -94,10 +94,12 @@ ignored, and the displayName of the item returned.
 Parameters
 ^^^^^^^^^^
 
-* ``in long aGenerateFormat``
+* in long aGenerateFormat
+
   The format to generate as per the GENERATE_*
   constants above.
-* ``in nsIStringBundle aBundle``
+* in :doc:`nsIStringBundle` aBundle
+
   An optional parameter that is a pointer to a string
   bundle that holds:
   chrome://messenger/locale/addressbook/addressBook.properties
@@ -109,7 +111,8 @@ Parameters
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
+
   A string containing the generated name.
 
 getProperty
@@ -123,13 +126,13 @@ to the desired type.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String name``
-* ``in nsIVariant defaultValue``
+* in AUTF8String name
+* in :doc:`nsIVariant` defaultValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIVariant``
+* :doc:`nsIVariant`
 
 getPropertyAsAString
 --------------------
@@ -148,12 +151,12 @@ to the desired type.
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
+* in string name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
 
 getPropertyAsAUTF8String
 ------------------------
@@ -162,12 +165,12 @@ getPropertyAsAUTF8String
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
+* in string name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AUTF8String``
+* AUTF8String
 
 getPropertyAsUint32
 -------------------
@@ -176,12 +179,12 @@ getPropertyAsUint32
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
+* in string name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``unsigned long``
+* unsigned long
 
 getPropertyAsBool
 -----------------
@@ -190,12 +193,12 @@ getPropertyAsBool
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
+* in string name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
 
 setProperty
 -----------
@@ -212,13 +215,8 @@ results.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String name``
-* ``in nsIVariant value``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String name
+* in :doc:`nsIVariant` value
 
 setPropertyAsAString
 --------------------
@@ -232,13 +230,8 @@ implementation of nsIVariant.
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
-* ``in AString value``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string name
+* in AString value
 
 setPropertyAsAUTF8String
 ------------------------
@@ -247,13 +240,8 @@ setPropertyAsAUTF8String
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
-* ``in AUTF8String value``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string name
+* in AUTF8String value
 
 setPropertyAsUint32
 -------------------
@@ -262,13 +250,8 @@ setPropertyAsUint32
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
-* ``in unsigned long value``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string name
+* in unsigned long value
 
 setPropertyAsBool
 -----------------
@@ -277,13 +260,8 @@ setPropertyAsBool
 Parameters
 ^^^^^^^^^^
 
-* ``in string name``
-* ``in boolean value``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string name
+* in boolean value
 
 deleteProperty
 --------------
@@ -297,12 +275,7 @@ error may be thrown when the card is modified at the database level.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String name``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String name
 
 hasEmailAddress
 ---------------
@@ -315,13 +288,15 @@ APIs for multi-valued attributes in bug 118665.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aEmailAddress``
+* in AUTF8String aEmailAddress
+
   The email address to attempt to match against.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   True if aEmailAddress matches any of the email
   addresses stored in the card.
 
@@ -338,13 +313,15 @@ The following types are supported:
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aType``
+* in AUTF8String aType
+
   The type of item to translate the card into.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AUTF8String``
+* AUTF8String
+
   A string containing the translated card.
 
 generatePhoneticName
@@ -357,13 +334,15 @@ values.
 Parameters
 ^^^^^^^^^^
 
-* ``in boolean aLastNameFirst``
+* in boolean aLastNameFirst
+
   Set to True to put the last name before the first.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
+
   A string containing the generated phonetic name.
 
 generateChatName
@@ -372,14 +351,11 @@ generateChatName
 Generate a chat name from the card, containing the value of the
 first non-empty chat field.
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
+
   A string containing the generated chat name.
 
 copy
@@ -390,12 +366,7 @@ This function will copy all values from one card to another.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard aSrcCard``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbCard` aSrcCard
 
 equals
 ------
@@ -413,11 +384,13 @@ may return inaccurate results.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard aCard``
+* in :doc:`nsIAbCard` aCard
+
   The card to compare against.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   Equality, as defined above.

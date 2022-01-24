@@ -15,13 +15,15 @@ names that commonly appear in LDIF files.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIFile aSrc``
+* in :doc:`nsIFile` aSrc
+
   The file to examine
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   true if the file appears to be of LDIF type,
   false otherwise
 
@@ -33,19 +35,18 @@ Imports a file into the specified address book.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory aDirectory``
+* in :doc:`nsIAbDirectory` aDirectory
+
   The address book to import addresses into.
-* ``in nsIFile aSrc``
+* in :doc:`nsIFile` aSrc
+
   The file to import addresses from.
-* ``in boolean aStoreLocAsHome``
+* in boolean aStoreLocAsHome
+
   Stores the address as a home rather than work
   address.
-* ``inout unsigned long aProgress``
+* inout unsigned long aProgress
+
   May be null, but if a pointer is supplied,
   then it will be updated regularly with the
   current position of reading from the file.
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``

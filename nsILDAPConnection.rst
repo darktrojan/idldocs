@@ -39,16 +39,11 @@ that already has an nsIEventQueue.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsILDAPURL aUrl``
-* ``in AUTF8String aBindName``
-* ``in nsILDAPMessageListener aMessageListener``
-* ``in nsISupports aClosure``
-* ``in unsigned long aVersion``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsILDAPURL` aUrl
+* in AUTF8String aBindName
+* in :doc:`nsILDAPMessageListener` aMessageListener
+* in :doc:`nsISupports` aClosure
+* in unsigned long aVersion
 
 getLdErrno
 ----------
@@ -58,11 +53,12 @@ Get information about the last error that occurred on this connection.
 Parameters
 ^^^^^^^^^^
 
-* ``out AUTF8String matched``
-* ``out AUTF8String s``
+* out AUTF8String matched
+* out AUTF8String s
 
 Return value
 ^^^^^^^^^^^^
 
-* ``long``
+* long
+
   the error code, as defined in nsILDAPErrors.idl

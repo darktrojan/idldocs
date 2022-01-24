@@ -115,27 +115,13 @@ this method initializes the implementation
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbLDAPDirectory directory``
-* ``in nsILDAPConnection connection``
-* ``in nsILDAPURL url``
-* ``in nsIAbLDAPReplicationQuery query``
-* ``in nsIWebProgressListener progressListener``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbLDAPDirectory` directory
+* in :doc:`nsILDAPConnection` connection
+* in :doc:`nsILDAPURL` url
+* in :doc:`nsIAbLDAPReplicationQuery` query
+* in :doc:`nsIWebProgressListener` progressListener
 
 abort
 -----
 
 this method a aborts the ongoing processing
-
-Parameters
-^^^^^^^^^^
-
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``

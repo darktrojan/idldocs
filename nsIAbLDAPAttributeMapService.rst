@@ -24,10 +24,11 @@ from checkState()
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aPrefBranchName``
+* in ACString aPrefBranchName
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbLDAPAttributeMap``
+* :doc:`nsIAbLDAPAttributeMap`
+
   the requested map

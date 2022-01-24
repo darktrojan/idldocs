@@ -21,22 +21,20 @@ is true.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aAddresses``
+* in AUTF8String aAddresses
+
   The list of emails (in standard header format)
   to collect into the address book.
-* ``in boolean aCreateCard``
+* in boolean aCreateCard
+
   Set to true if a card should be created if the
   email address doesn't exist.
-* ``in unsigned long aSendFormat``
+* in unsigned long aSendFormat
+
   The send format to save for the card. See
   nsIAbPreferMailFormat for values. If updating a card
   this value will only be changed if the current value
   for the card is "unknown".
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 collectSingleAddress
 --------------------
@@ -48,25 +46,25 @@ See collectAddress for the general implementation.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aEmail``
+* in AUTF8String aEmail
+
   The email address to collect.
-* ``in AUTF8String aDisplayName``
+* in AUTF8String aDisplayName
+
   The display name associated with the email address.
-* ``in boolean aCreateCard``
+* in boolean aCreateCard
+
   Set to true if a card should be created if the
   email address doesn't exist (ignored if
   aSkipCheckExisting is true).
-* ``in unsigned long aSendFormat``
+* in unsigned long aSendFormat
+
   The send format to save for the card. See
   nsIAbPreferMailFormat for values. If updating a card
   this value will only be changed if the current value
   for the card is "unknown".
-* ``in boolean aSkipCheckExisting``
+* in boolean aSkipCheckExisting
+
   Optional parameter, if this is set then the
   implementation will skip checking for an
   existing card, and just create a new card.
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``

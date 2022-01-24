@@ -62,13 +62,15 @@ Returns the directory that represents the supplied URI.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aURI``
+* in ACString aURI
+
   The URI of the address book to find.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
+
   The found address book.
 
 getDirectoryFromId
@@ -79,12 +81,13 @@ Returns the directory that has the supplied dirPrefId.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aDirPrefId``
+* in ACString aDirPrefId
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
+
   The found AB directory.
 
 getDirectoryFromUID
@@ -95,12 +98,13 @@ Returns the directory that has the supplied UID.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aUID``
+* in ACString aUID
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
+
   The found AB directory.
 
 newAddressBook
@@ -111,21 +115,25 @@ Creates a new address book.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString aDirName``
+* in AString aDirName
+
   The description of the address book.
-* ``in ACString aURI``
+* in ACString aURI
+
   The URI for the address book. This is specific to each
   type of address book.
-* ``in unsigned long aType``
+* in unsigned long aType
+
   One of the *_DIRECTORY_TYPE constants.
-* ``in ACString aPrefName``
+* in ACString aPrefName
+
   Overrides the default of ldap_2.servers.<aDirName>
   (note that the caller must ensure its uniqueness).
 
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
 
 addAddressBook
 --------------
@@ -136,12 +144,7 @@ Adds a previously created address book object. If it has not been removed
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory aDir``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbDirectory` aDir
 
 deleteAddressBook
 -----------------
@@ -151,14 +154,10 @@ Deletes an address book.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aURI``
+* in ACString aURI
+
   The URI for the address book. This is specific to each
   type of address book.
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 mailListNameExists
 ------------------
@@ -168,12 +167,13 @@ Finds out if the mailing list name exists in any address book.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString name``
+* in AString name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   True if the name exists.
 
 directoryNameExists
@@ -184,12 +184,13 @@ Finds out if the directory name already exists.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString name``
+* in AString name
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   True if a directory called name already exists.
 
 cardForEmailAddress
@@ -207,7 +208,8 @@ different result, but probably won't.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String emailAddress``
+* in AUTF8String emailAddress
+
   The email address to find in any of the email address
   fields. If emailAddress is empty, the directories
   won't be searched and the function will return as if
@@ -216,7 +218,8 @@ Parameters
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
   An nsIAbCard if one was found, else returns NULL.
 
 getMailListFromName
@@ -227,10 +230,11 @@ Returns the mailing lists that has the supplied name.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString aName``
+* in AString aName
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
+
   The found AB directory.

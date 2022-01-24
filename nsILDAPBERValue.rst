@@ -19,12 +19,7 @@ Set the BER value from an array of bytes (copies).
 Parameters
 ^^^^^^^^^^
 
-* ``in Array<octet> aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in Array<octet> aValue
 
 setFromUTF8
 -----------
@@ -35,12 +30,7 @@ Set the BER value from a UTF8 string (copies).
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aValue
 
 get
 ---
@@ -51,11 +41,7 @@ zero-length, aCount and aRetVal will both be 0.  This means that
 dereferencing aRetVal.
 @exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<octet>

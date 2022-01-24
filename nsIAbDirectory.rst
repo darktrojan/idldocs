@@ -32,7 +32,8 @@ the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String emailAddress``
+* in AUTF8String emailAddress
+
   The email address to find in any of the email address
   fields. If emailAddress is empty, the database won't
   be searched and the function will return as if no card
@@ -41,7 +42,8 @@ Parameters
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
   An nsIAbCard if one was found, else returns NULL.
 
 getCardFromProperty
@@ -56,23 +58,27 @@ If the property is not natively a string, it can still be searched for
 using the string-encoded value of the property, e.g. "0". See
 nsIAbCard::getPropertyAsAUTF8String for more information. Empty values will
 return no match, to prevent spurious results.
-@result                An nsIAbCard if one was found, else returns NULL.
 @exception NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
 Parameters
 ^^^^^^^^^^
 
-* ``in string aProperty``
+* in string aProperty
+
   The property to look for.
-* ``in AUTF8String aValue``
+* in AUTF8String aValue
+
   The value to search for.
-* ``in boolean aCaseSensitive``
+* in boolean aCaseSensitive
+
   True if matching should be done case-sensitively.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
+  An nsIAbCard if one was found, else returns NULL.
 
 getCardsFromProperty
 --------------------
@@ -80,22 +86,26 @@ getCardsFromProperty
 Returns all address book cards with a specific property matching value
 This function is almost identical to getCardFromProperty, with the
 exception of returning all cards rather than just the first.
-@result                The matching nsIAbCard instances.
 
 Parameters
 ^^^^^^^^^^
 
-* ``in string aProperty``
+* in string aProperty
+
   The property to look for.
-* ``in AUTF8String aValue``
+* in AUTF8String aValue
+
   The value to search for.
-* ``in boolean aCaseSensitive``
+* in boolean aCaseSensitive
+
   True if matching should be done case-sensitively.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<:doc:`nsIAbCard`>
+
+  The matching nsIAbCard instances.
 
 getMailListFromName
 -------------------
@@ -105,12 +115,12 @@ Returns the nsIAbDirectory for a mailing list with the specified name.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString aName``
+* in AString aName
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
 
 setUID
 ------
@@ -119,12 +129,7 @@ setUID
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aUID``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AUTF8String aUID
 
 search
 ------
@@ -144,14 +149,9 @@ special characters including '(' and ')'.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString query``
-* ``in AString searchString``
-* ``in nsIAbDirSearchListener listener``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in AString query
+* in AString searchString
+* in :doc:`nsIAbDirSearchListener` listener
 
 init
 ----
@@ -161,12 +161,7 @@ Initializes a directory, pointing to a particular URI.
 Parameters
 ^^^^^^^^^^
 
-* ``in string aURI``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string aURI
 
 cleanUp
 -------
@@ -174,14 +169,10 @@ cleanUp
 Clean up any database connections or open file handles.
 Called at shutdown or if the directory is about to be deleted.
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``Promise``
+* Promise
 
 deleteDirectory
 ---------------
@@ -190,12 +181,7 @@ deleteDirectory
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory directory``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbDirectory` directory
 
 hasCard
 -------
@@ -204,12 +190,12 @@ hasCard
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard cards``
+* in :doc:`nsIAbCard` cards
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
 
 hasDirectory
 ------------
@@ -218,12 +204,12 @@ hasDirectory
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory dir``
+* in :doc:`nsIAbDirectory` dir
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
 
 hasMailListWithName
 -------------------
@@ -232,12 +218,12 @@ hasMailListWithName
 Parameters
 ^^^^^^^^^^
 
-* ``in AString aName``
+* in AString aName
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
 
 addCard
 -------
@@ -249,12 +235,13 @@ can add an nsIAbLDAPCard to an nsIAbMDBDirectory.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard card``
+* in :doc:`nsIAbCard` card
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
   "Real" card (eg nsIAbLDAPCard) that can be used for some
   extra functions.
 
@@ -266,12 +253,7 @@ Modifies a card in the database to match that supplied.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard modifiedCard``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbCard` modifiedCard
 
 deleteCards
 -----------
@@ -281,13 +263,9 @@ Deletes the array of cards from the database.
 Parameters
 ^^^^^^^^^^
 
-* ``in Array<nsIAbCard> aCards``
+* in Array<:doc:`nsIAbCard`> aCards
+
   The cards to delete from the database.
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 dropCard
 --------
@@ -296,13 +274,8 @@ dropCard
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard card``
-* ``in boolean needToCopyCard``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbCard` card
+* in boolean needToCopyCard
 
 useForAutocomplete
 ------------------
@@ -315,12 +288,13 @@ that also do not support GetChildCards should return false.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aIdentityKey``
+* in ACString aIdentityKey
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   True if this directory should/can be used during
   local autocomplete.
 
@@ -333,13 +307,15 @@ for top-level directories.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory list``
+* in :doc:`nsIAbDirectory` list
+
   The new mailing list to add.
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbDirectory``
+* :doc:`nsIAbDirectory`
+
   The mailing list directory added, which may have been modified.
 
 editMailListToDatabase
@@ -352,14 +328,10 @@ uri as the listCard.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard listCard``
+* in :doc:`nsIAbCard` listCard
+
   A nsIAbCard version of the mailing list with the new
   values.
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 copyMailList
 ------------
@@ -368,12 +340,7 @@ copyMailList
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbDirectory srcList``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbDirectory` srcList
 
 getIntValue
 -----------
@@ -387,13 +354,14 @@ be obtained (e.g. dirPrefId isn't set).
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in long aDefaultValue``
+* in string aName
+* in long aDefaultValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``long``
+* long
+
   The value of the pref or the default value.
 
 getBoolValue
@@ -403,13 +371,13 @@ getBoolValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in boolean aDefaultValue``
+* in string aName
+* in boolean aDefaultValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
 
 getStringValue
 --------------
@@ -418,13 +386,13 @@ getStringValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in ACString aDefaultValue``
+* in string aName
+* in ACString aDefaultValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
 
 getLocalizedStringValue
 -----------------------
@@ -433,13 +401,13 @@ getLocalizedStringValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in AUTF8String aDefaultValue``
+* in string aName
+* in AUTF8String aDefaultValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AUTF8String``
+* AUTF8String
 
 setIntValue
 -----------
@@ -457,13 +425,8 @@ be obtained (e.g. dirPrefId isn't set).
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in long aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string aName
+* in long aValue
 
 setBoolValue
 ------------
@@ -472,13 +435,8 @@ setBoolValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in boolean aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string aName
+* in boolean aValue
 
 setStringValue
 --------------
@@ -487,13 +445,8 @@ setStringValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in ACString aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string aName
+* in ACString aValue
 
 setLocalizedStringValue
 -----------------------
@@ -502,10 +455,5 @@ setLocalizedStringValue
 Parameters
 ^^^^^^^^^^
 
-* ``in string aName``
-* ``in AUTF8String aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in string aName
+* in AUTF8String aValue

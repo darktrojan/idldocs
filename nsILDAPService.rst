@@ -26,14 +26,14 @@ unexpected error code
 Parameters
 ^^^^^^^^^^
 
-* ``in unsigned long aMaxSize``
-* ``in AUTF8String aPattern``
-* ``in AUTF8String aPrefix``
-* ``in AUTF8String aSuffix``
-* ``in AUTF8String aAttr``
-* ``in AUTF8String aValue``
+* in unsigned long aMaxSize
+* in AUTF8String aPattern
+* in AUTF8String aPrefix
+* in AUTF8String aSuffix
+* in AUTF8String aAttr
+* in AUTF8String aValue
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AUTF8String``
+* AUTF8String

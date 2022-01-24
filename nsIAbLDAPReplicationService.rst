@@ -15,13 +15,8 @@ Start Replication of given LDAP directory represented by the URI
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbLDAPDirectory aDirectory``
-* ``in nsIWebProgressListener progressListener``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbLDAPDirectory` aDirectory
+* in :doc:`nsIWebProgressListener` progressListener
 
 cancelReplication
 -----------------
@@ -31,12 +26,7 @@ Cancel Replication of given LDAP directory represented by the URI
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbLDAPDirectory aDirectory``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbLDAPDirectory` aDirectory
 
 done
 ----
@@ -46,9 +36,4 @@ callback when replication is done, failure or success
 Parameters
 ^^^^^^^^^^
 
-* ``in boolean aSuccess``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in boolean aSuccess

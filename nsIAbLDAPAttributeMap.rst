@@ -37,13 +37,15 @@ name, in order of precedence (highest to lowest).
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aProperty``
+* in ACString aProperty
+
   the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
+
   a comma-separated list of attributes, null if no entry is
   present
 
@@ -57,13 +59,15 @@ order of precedence (highest to lowest).
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aProperty``
+* in ACString aProperty
+
   the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<ACString>
+
   an array of attributes
 
 getFirstAttribute
@@ -75,13 +79,15 @@ name
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aProperty``
+* in ACString aProperty
+
   the address book property to return attrs for
 
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
+
   the first attribute associated with a given property,
   null if there is no entry for this property
 
@@ -96,14 +102,9 @@ than one property
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aProperty``
-* ``in ACString aAttributeList``
-* ``in boolean allowInconsistencies``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in ACString aProperty
+* in ACString aAttributeList
+* in boolean allowInconsistencies
 
 getProperty
 -----------
@@ -114,12 +115,13 @@ map to.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aAttribute``
+* in ACString aAttribute
 
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
+
   the addressbook property name, null if it's not used in the map
 
 getAllCardAttributes
@@ -130,14 +132,11 @@ property map (used for passing to to an LDAP search when you want
 everything that could be in a card returned).
 @exception NS_ERROR_FAILURE  there are no attributes in this property map
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``ACString``
+* ACString
+
   a comma-separated list of attribute names
 
 getAllCardProperties
@@ -147,14 +146,11 @@ Get all properties that may be used in an addressbook card via this
 property map.
 @exception NS_ERROR_FAILURE  there are no attributes in this property map
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<ACString>
+
   an array of properties
 
 checkState
@@ -165,15 +161,6 @@ Check that no LDAP attributes are listed in more than one property.
 multiple times.  The object is now in an
 inconsistent state, and should be either
 manually repaired or discarded.
-
-Parameters
-^^^^^^^^^^
-
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 setFromPrefs
 ------------
@@ -187,12 +174,7 @@ manually repaired or discarded.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aPrefBranchName``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in ACString aPrefBranchName
 
 setCardPropertiesFromLDAPMessage
 --------------------------------
@@ -205,12 +187,9 @@ are found in the message
 Parameters
 ^^^^^^^^^^
 
-* ``in nsILDAPMessage aMessage``
+* in :doc:`nsILDAPMessage` aMessage
+
   is the LDAP message to get the values from
-* ``in nsIAbCard aCard``
+* in :doc:`nsIAbCard` aCard
+
   is the card object whose values are to be set
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``

@@ -13,9 +13,9 @@ getFolderURIs
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aURI``
+* in AUTF8String aURI
 
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<ACString>

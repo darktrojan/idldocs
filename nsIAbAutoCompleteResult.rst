@@ -17,12 +17,12 @@ Get the card from the result at the given index
 Parameters
 ^^^^^^^^^^
 
-* ``in long index``
+* in long index
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
 
 getEmailToUse
 -------------
@@ -30,17 +30,18 @@ getEmailToUse
 Gets the email to use for the card within the result at the given index.
 This is the email that was matched against for the card where there are
 multiple email addresses on a card.
-@result       The email address to use from the card.
 
 Parameters
 ^^^^^^^^^^
 
-* ``in long index``
+* in long index
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
+
+  The email address to use from the card.
 
 isCompleteResult
 ----------------
@@ -53,9 +54,9 @@ If false, the directory will be present in asyncDirectories.
 Parameters
 ^^^^^^^^^^
 
-* ``in long index``
+* in long index
 
 Return value
 ^^^^^^^^^^^^
 
-* ``bool``
+* bool

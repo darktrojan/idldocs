@@ -58,16 +58,11 @@ Initialize an LDAP URL
 Parameters
 ^^^^^^^^^^
 
-* ``in unsigned long aUrlType``
-* ``in long aDefaultPort``
-* ``in AUTF8String aSpec``
-* ``in string aOriginCharset``
-* ``in nsIURI aBaseURI``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in unsigned long aUrlType
+* in long aDefaultPort
+* in AUTF8String aSpec
+* in string aOriginCharset
+* in :doc:`nsIURI` aBaseURI
 
 addAttribute
 ------------
@@ -78,12 +73,7 @@ attribute is already in our array, this becomes a noop.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aAttribute``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in ACString aAttribute
 
 removeAttribute
 ---------------
@@ -95,12 +85,7 @@ the attribute didn't exist in the array, this becomes a noop.
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aAttribute``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in ACString aAttribute
 
 hasAttribute
 ------------
@@ -111,10 +96,11 @@ Test if an attribute is in our list of attributes already
 Parameters
 ^^^^^^^^^^
 
-* ``in ACString aAttribute``
+* in ACString aAttribute
 
 Return value
 ^^^^^^^^^^^^
 
-* ``boolean``
+* boolean
+
   boolean                      Truth value

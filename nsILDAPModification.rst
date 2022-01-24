@@ -54,14 +54,9 @@ time to avoid multiple function calls.
 Parameters
 ^^^^^^^^^^
 
-* ``in long aOperation``
-* ``in ACString aType``
-* ``in Array<nsILDAPBERValue> aValues``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in long aOperation
+* in ACString aType
+* in Array<:doc:`nsILDAPBERValue`> aValues
 
 setUpModificationOneValue
 -------------------------
@@ -70,11 +65,6 @@ setUpModificationOneValue
 Parameters
 ^^^^^^^^^^
 
-* ``in long aOperation``
-* ``in ACString aType``
-* ``in nsILDAPBERValue aValue``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in long aOperation
+* in ACString aType
+* in :doc:`nsILDAPBERValue` aValue

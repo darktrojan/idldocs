@@ -14,12 +14,13 @@ Translates a vCard string into a nsIAbCard.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString vCardStr``
+* in AString vCardStr
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
   - A card containing the translated vCard data.
 
 escapedVCardToAbCard
@@ -30,12 +31,13 @@ Translates an URL-encoded vCard string into a nsIAbCard.
 Parameters
 ^^^^^^^^^^
 
-* ``in AString escapedVCardStr``
+* in AString escapedVCardStr
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsIAbCard``
+* :doc:`nsIAbCard`
+
   - A card containing the translated vCard data.
 
 abCardToEscapedVCard
@@ -46,10 +48,11 @@ Translates a nsIAbCard into an URL-encoded vCard.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard abCard``
+* in :doc:`nsIAbCard` abCard
 
 Return value
 ^^^^^^^^^^^^
 
-* ``AString``
+* AString
+
   - The string containing the vCard data.

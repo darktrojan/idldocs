@@ -109,14 +109,11 @@ Get all the attributes in this message.
 @exception NS_ERROR_UNEXPECTED           bug or memory corruption
 @exception NS_ERROR_LDAP_DECODING_ERROR  problem during BER decoding
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<AUTF8String>
+
   array of all attributes in the current message
 
 getValues
@@ -131,12 +128,13 @@ decoding error.
 Parameters
 ^^^^^^^^^^
 
-* ``in string attr``
+* in string attr
 
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<AString>
+
   Array of values for attr.
 
 toUnicode
@@ -144,14 +142,11 @@ toUnicode
 
 get an LDIF-like string representation of this message
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``wstring``
+* wstring
+
   unicode encoded string representation.
 
 getBinaryValues
@@ -167,10 +162,11 @@ decoding error.
 Parameters
 ^^^^^^^^^^
 
-* ``in string attr``
+* in string attr
 
 Return value
 ^^^^^^^^^^^^
 
-* ``Array``
+* Array<:doc:`nsILDAPBERValue`>
+
   Array of nsILDAPBERValue objects.

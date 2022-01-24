@@ -15,9 +15,9 @@ Parse a string to an LDAP URL.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aSpec``
+* in AUTF8String aSpec
 
 Return value
 ^^^^^^^^^^^^
 
-* ``nsILDAPURLParserResult``
+* :doc:`nsILDAPURLParserResult`

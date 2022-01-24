@@ -15,12 +15,7 @@ Invoked for each matching result found by the search.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsIAbCard aCard``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in :doc:`nsIAbCard` aCard
 
 onSearchFinished
 ----------------
@@ -30,12 +25,7 @@ Invoked when the search finishes.
 Parameters
 ^^^^^^^^^^
 
-* ``in nsresult status``
-* ``in bool complete``
-* ``in nsITransportSecurityInfo secInfo``
-* ``in ACString location``
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
+* in nsresult status
+* in bool complete
+* in :doc:`nsITransportSecurityInfo` secInfo
+* in ACString location

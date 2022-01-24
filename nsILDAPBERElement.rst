@@ -170,13 +170,9 @@ BerElement
 Parameters
 ^^^^^^^^^^
 
-* ``in nsILDAPBERValue aValue``
+* in :doc:`nsILDAPBERValue` aValue
+
   value to preinitialize with; 0 for a new empty object
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 putString
 ---------
@@ -187,16 +183,19 @@ Write a string to this element.
 Parameters
 ^^^^^^^^^^
 
-* ``in AUTF8String aString``
+* in AUTF8String aString
+
   string to write
-* ``in unsigned long aTag``
+* in unsigned long aTag
+
   tag for this string (if TAG_LBER_DEFAULT is used,
   TAG_LBER_OCTETSTRING will be written).
 
 Return value
 ^^^^^^^^^^^^
 
-* ``unsigned long``
+* unsigned long
+
   number of bytes written
 
 startSet
@@ -208,14 +207,10 @@ Start a set.  Sets may be nested.
 Parameters
 ^^^^^^^^^^
 
-* ``in unsigned long aTag``
+* in unsigned long aTag
+
   tag for this set (if TAG_LBER_DEFAULT is used,
   TAG_LBER_SET will be written).
-
-Return value
-^^^^^^^^^^^^
-
-* ``void``
 
 putSet
 ------
@@ -223,12 +218,9 @@ putSet
 Cause the entire set started by the last startSet() call to be written.
 @exception  NS_ERROR_FAILUE   C-SDK returned an error
 
-Parameters
-^^^^^^^^^^
-
-
 Return value
 ^^^^^^^^^^^^
 
-* ``unsigned long``
+* unsigned long
+
   number of bytes written
