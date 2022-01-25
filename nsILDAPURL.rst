@@ -137,12 +137,16 @@ removeAttribute
 
 Remove one attribute from the array of attributes to request. If
 the attribute didn't exist in the array, this becomes a noop.
-@exception NS_ERROR_OUT_OF_MEMORY    Ran out of memory
 
 Parameters
 ^^^^^^^^^^
 
 * in ACString aAttribute
+
+Throws
+^^^^^^
+
+* NS_ERROR_OUT_OF_MEMORY    Ran out of memory
 
 hasAttribute
 ------------
@@ -150,7 +154,6 @@ hasAttribute
 ``boolean hasAttribute(aAttribute)``
 
 Test if an attribute is in our list of attributes already
-@exception NS_ERROR_NULL_POINTER     NULL pointer to GET method
 
 Parameters
 ^^^^^^^^^^
@@ -163,3 +166,8 @@ Return value
 * boolean
 
   boolean                      Truth value
+
+Throws
+^^^^^^
+
+* NS_ERROR_NULL_POINTER     NULL pointer to GET method

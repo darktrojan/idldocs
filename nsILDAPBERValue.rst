@@ -16,12 +16,16 @@ set
 ``void set(aValue)``
 
 Set the BER value from an array of bytes (copies).
-@exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Parameters
 ^^^^^^^^^^
 
 * in Array<octet> aValue
+
+Throws
+^^^^^^
+
+* NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 setFromUTF8
 -----------
@@ -29,12 +33,16 @@ setFromUTF8
 ``void setFromUTF8(aValue)``
 
 Set the BER value from a UTF8 string (copies).
-@exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Parameters
 ^^^^^^^^^^
 
 * in AUTF8String aValue
+
+Throws
+^^^^^^
+
+* NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 get
 ---
@@ -45,9 +53,13 @@ Get the BER value as an array of bytes.  Note that if this value is
 zero-length, aCount and aRetVal will both be 0.  This means that
 (in C++ anyway) the caller MUST test either aCount or aRetval before
 dereferencing aRetVal.
-@exception NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to
 
 Return value
 ^^^^^^^^^^^^
 
 * Array<octet>
+
+Throws
+^^^^^^
+
+* NS_ERROR_OUT_OF_MEMORY    couldn't allocate buffer to copy to

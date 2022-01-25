@@ -88,8 +88,6 @@ any actual operations.  Note that by default, the aMessageListener
 callbacks happen on the LDAP connection thread.  If you need them
 to happen on the main thread (or any other thread), then you should
 created an nsISupports proxy object and pass that in.
-@exception NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
-@exception NS_ERROR_UNEXPECTED           failed to get connection handle
 
 Parameters
 ^^^^^^^^^^
@@ -98,22 +96,32 @@ Parameters
 * in :doc:`nsILDAPMessageListener` aMessageListener
 * in :doc:`nsISupports` aClosure
 
+Throws
+^^^^^^
+
+* NS_ERROR_ILLEGAL_VALUE        a NULL pointer was passed in
+* NS_ERROR_UNEXPECTED           failed to get connection handle
+
 simpleBind
 ----------
 
 ``void simpleBind(passwd)``
 
 Asynchronously authenticate to the LDAP server.
-@exception NS_ERROR_LDAP_ENCODING_ERROR  problem encoding bind request
-@exception NS_ERROR_LDAP_SERVER_DOWN     server down (XXX rebinds?)
-@exception NS_ERROR_LDAP_CONNECT_ERROR   connection failed or lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_UNEXPECTED           internal error
 
 Parameters
 ^^^^^^^^^^
 
 * in AUTF8String passwd
+
+Throws
+^^^^^^
+
+* NS_ERROR_LDAP_ENCODING_ERROR  problem encoding bind request
+* NS_ERROR_LDAP_SERVER_DOWN     server down (XXX rebinds?)
+* NS_ERROR_LDAP_CONNECT_ERROR   connection failed or lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_UNEXPECTED           internal error
 
 saslBind
 --------
@@ -151,25 +159,29 @@ Kicks off an asynchronous add request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
-of the LDAP protocol that the
-client is using
-@exception NS_ERROR_UNEXPECTED           an unexpected error has
-occurred
-XXX doesn't currently handle LDAPControl params
 
 Parameters
 ^^^^^^^^^^
 
 * in AUTF8String aBaseDn
 * in Array<:doc:`nsILDAPModification`> aMods
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
+  of the LDAP protocol that the
+  client is using
+* NS_ERROR_UNEXPECTED           an unexpected error has
+  occurred
+  XXX doesn't currently handle LDAPControl params
 
 deleteExt
 ---------
@@ -180,24 +192,28 @@ Kicks off an asynchronous delete request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
-of the LDAP protocol that the
-client is using
-@exception NS_ERROR_UNEXPECTED           an unexpected error has
-occurred
-XXX doesn't currently handle LDAPControl params
 
 Parameters
 ^^^^^^^^^^
 
 * in AUTF8String aBaseDn
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
+  of the LDAP protocol that the
+  client is using
+* NS_ERROR_UNEXPECTED           an unexpected error has
+  occurred
+  XXX doesn't currently handle LDAPControl params
 
 modifyExt
 ---------
@@ -208,19 +224,6 @@ Kicks off an asynchronous modify request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
-of the LDAP protocol that the
-client is using
-@exception NS_ERROR_UNEXPECTED           an unexpected error has
-occurred
-XXX doesn't currently handle LDAPControl params
 
 Parameters
 ^^^^^^^^^^
@@ -228,25 +231,29 @@ Parameters
 * in AUTF8String aBaseDn
 * in Array<:doc:`nsILDAPModification`> aMods
 
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
+  of the LDAP protocol that the
+  client is using
+* NS_ERROR_UNEXPECTED           an unexpected error has
+  occurred
+  XXX doesn't currently handle LDAPControl params
+
 rename
 ------
 
 ``void rename(aBaseDn, aNewRDn, aNewParent, aDeleteOldRDn)``
 
 Kicks off an asynchronous rename request.
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
-of the LDAP protocol that the
-client is using
-@exception NS_ERROR_UNEXPECTED           an unexpected error has
-occurred
-XXX doesn't currently handle LDAPControl params
 
 Parameters
 ^^^^^^^^^^
@@ -255,6 +262,23 @@ Parameters
 * in AUTF8String aNewRDn
 * in AUTF8String aNewParent
 * in boolean aDeleteOldRDn
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
+  of the LDAP protocol that the
+  client is using
+* NS_ERROR_UNEXPECTED           an unexpected error has
+  occurred
+  XXX doesn't currently handle LDAPControl params
 
 searchExt
 ---------
@@ -265,18 +289,6 @@ Kicks off an asynchronous search request.  The "ext" stands for
 "extensions", and is intended to convey that this method will
 eventually support the extensions described in the
 draft-ietf-ldapext-ldap-c-api-04.txt Internet Draft.
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
-of the LDAP protocol that the
-client is using
-@exception NS_ERROR_LDAP_FILTER_ERROR
-@exception NS_ERROR_UNEXPECTED
 
 Parameters
 ^^^^^^^^^^
@@ -288,6 +300,22 @@ Parameters
 * in PRIntervalTime aTimeOut
 * in int32_t aSizeLimit
 
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_LDAP_NOT_SUPPORTED   not supported in the version
+  of the LDAP protocol that the
+  client is using
+* NS_ERROR_LDAP_FILTER_ERROR
+* NS_ERROR_UNEXPECTED
+
 abandonExt
 ----------
 
@@ -295,13 +323,17 @@ abandonExt
 
 Cancels an async operation that is in progress.
 XXX controls not supported yet
-@exception NS_ERROR_NOT_IMPLEMENTED      server or client controls
-were set on this object
-@exception NS_ERROR_NOT_INITIALIZED      operation not initialized
-@exception NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
-@exception NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
-receive the request or the
-connection was lost
-@exception NS_ERROR_OUT_OF_MEMORY        out of memory
-@exception NS_ERROR_INVALID_ARG          invalid argument
-@exception NS_ERROR_UNEXPECTED           internal error
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_IMPLEMENTED      server or client controls
+  were set on this object
+* NS_ERROR_NOT_INITIALIZED      operation not initialized
+* NS_ERROR_LDAP_ENCODING_ERROR  error during BER-encoding
+* NS_ERROR_LDAP_SERVER_DOWN     the LDAP server did not
+  receive the request or the
+  connection was lost
+* NS_ERROR_OUT_OF_MEMORY        out of memory
+* NS_ERROR_INVALID_ARG          invalid argument
+* NS_ERROR_UNEXPECTED           internal error

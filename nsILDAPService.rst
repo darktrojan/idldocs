@@ -19,11 +19,6 @@ Exposes the functionality of ldap_create_filter() via XPCOM.
 There is some documentation on the filter template format
 (passed in via aPattern) here:
 https://docs.oracle.com/cd/E19957-01/817-6707/filter.html
-@exception NS_ERROR_INVALID_ARG      invalid parameter passed in
-@exception NS_ERROR_OUT_OF_MEMORY    allocation failed
-@exception NS_ERROR_NOT_AVAILABLE    filter longer than maxsiz chars
-@exception NS_ERROR_UNEXPECTED       ldap_create_filter returned
-unexpected error code
 
 Parameters
 ^^^^^^^^^^
@@ -39,3 +34,12 @@ Return value
 ^^^^^^^^^^^^
 
 * AUTF8String
+
+Throws
+^^^^^^
+
+* NS_ERROR_INVALID_ARG      invalid parameter passed in
+* NS_ERROR_OUT_OF_MEMORY    allocation failed
+* NS_ERROR_NOT_AVAILABLE    filter longer than maxsiz chars
+* NS_ERROR_UNEXPECTED       ldap_create_filter returned
+  unexpected error code

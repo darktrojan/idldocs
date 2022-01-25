@@ -58,11 +58,6 @@ init
 
 Set up the connection.  Note that init() must be called on a thread
 that already has an nsIEventQueue.
-@exception NS_ERROR_ILLEGAL_VALUE        null pointer or invalid version
-@exception NS_ERROR_OUT_OF_MEMORY        ran out of memory
-@exception NS_ERROR_OFFLINE              we are in off-line mode
-@exception NS_ERROR_FAILURE
-@exception NS_ERROR_UNEXPECTED           internal error
 
 Parameters
 ^^^^^^^^^^
@@ -72,6 +67,15 @@ Parameters
 * in :doc:`nsILDAPMessageListener` aMessageListener
 * in :doc:`nsISupports` aClosure
 * in unsigned long aVersion
+
+Throws
+^^^^^^
+
+* NS_ERROR_ILLEGAL_VALUE        null pointer or invalid version
+* NS_ERROR_OUT_OF_MEMORY        ran out of memory
+* NS_ERROR_OFFLINE              we are in off-line mode
+* NS_ERROR_FAILURE
+* NS_ERROR_UNEXPECTED           internal error
 
 getLdErrno
 ----------

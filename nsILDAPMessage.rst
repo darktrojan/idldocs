@@ -171,10 +171,6 @@ getAttributes
 ``Array<AUTF8String> getAttributes()``
 
 Get all the attributes in this message.
-@exception NS_ERROR_OUT_OF_MEMORY
-@exception NS_ERROR_ILLEGAL_VALUE        null pointer passed in
-@exception NS_ERROR_UNEXPECTED           bug or memory corruption
-@exception NS_ERROR_LDAP_DECODING_ERROR  problem during BER decoding
 
 Return value
 ^^^^^^^^^^^^
@@ -183,16 +179,20 @@ Return value
 
   array of all attributes in the current message
 
+Throws
+^^^^^^
+
+* NS_ERROR_OUT_OF_MEMORY
+* NS_ERROR_ILLEGAL_VALUE        null pointer passed in
+* NS_ERROR_UNEXPECTED           bug or memory corruption
+* NS_ERROR_LDAP_DECODING_ERROR  problem during BER decoding
+
 getValues
 ---------
 
 ``Array<AString> getValues(attr)``
 
 Get an array of all the attribute values in this message.
-@exception NS_ERROR_UNEXPECTED           Bug or memory corruption
-@exception NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
-decoding error.
-@exception NS_ERROR_OUT_OF_MEMORY
 
 Parameters
 ^^^^^^^^^^
@@ -205,6 +205,14 @@ Return value
 * Array<AString>
 
   Array of values for attr.
+
+Throws
+^^^^^^
+
+* NS_ERROR_UNEXPECTED           Bug or memory corruption
+* NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
+  decoding error.
+* NS_ERROR_OUT_OF_MEMORY
 
 toUnicode
 ---------
@@ -227,10 +235,6 @@ getBinaryValues
 
 Get an array of all the attribute values in this message (a wrapper
 around the LDAP C SDK's get_values_len()).
-@exception NS_ERROR_UNEXPECTED           Bug or memory corruption
-@exception NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
-decoding error.
-@exception NS_ERROR_OUT_OF_MEMORY
 
 Parameters
 ^^^^^^^^^^
@@ -243,3 +247,11 @@ Return value
 * Array<:doc:`nsILDAPBERValue`>
 
   Array of nsILDAPBERValue objects.
+
+Throws
+^^^^^^
+
+* NS_ERROR_UNEXPECTED           Bug or memory corruption
+* NS_ERROR_LDAP_DECODING_ERROR  Attribute not found or other
+  decoding error.
+* NS_ERROR_OUT_OF_MEMORY

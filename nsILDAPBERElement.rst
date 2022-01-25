@@ -177,10 +177,6 @@ init
 
 Initialize this object.  Must be called before calling any other method
 on this interface.
-@exception  NS_ERROR_NOT_IMPLEMENTED  preinitialization is currently
-not implemented
-@exception  NS_ERROR_OUT_OF_MEMORY    unable to allocate the internal
-BerElement
 
 Parameters
 ^^^^^^^^^^
@@ -189,13 +185,20 @@ Parameters
 
   value to preinitialize with; 0 for a new empty object
 
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_IMPLEMENTED  preinitialization is currently
+  not implemented
+* NS_ERROR_OUT_OF_MEMORY    unable to allocate the internal
+  BerElement
+
 putString
 ---------
 
 ``unsigned long putString(aString, aTag)``
 
 Write a string to this element.
-@exception  NS_ERROR_FAILUE   C-SDK returned error
 
 Parameters
 ^^^^^^^^^^
@@ -215,13 +218,17 @@ Return value
 
   number of bytes written
 
+Throws
+^^^^^^
+
+* NS_ERROR_FAILUE   C-SDK returned error
+
 startSet
 --------
 
 ``void startSet(aTag)``
 
 Start a set.  Sets may be nested.
-@exception  NS_ERROR_FAILUE   C-SDK returned an error
 
 Parameters
 ^^^^^^^^^^
@@ -231,13 +238,17 @@ Parameters
   tag for this set (if TAG_LBER_DEFAULT is used,
   TAG_LBER_SET will be written).
 
+Throws
+^^^^^^
+
+* NS_ERROR_FAILUE   C-SDK returned an error
+
 putSet
 ------
 
 ``unsigned long putSet()``
 
 Cause the entire set started by the last startSet() call to be written.
-@exception  NS_ERROR_FAILUE   C-SDK returned an error
 
 Return value
 ^^^^^^^^^^^^
@@ -245,3 +256,8 @@ Return value
 * unsigned long
 
   number of bytes written
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILUE   C-SDK returned an error

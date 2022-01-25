@@ -157,7 +157,6 @@ return one of these cards in an implementation-defined manner.
 Matching is performed in a case-insensitive manner.
 This method performs a synchronous operation. If the collection cannot do
 the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
-@exception NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
 Parameters
 ^^^^^^^^^^
@@ -176,6 +175,11 @@ Return value
 
   An nsIAbCard if one was found, else returns NULL.
 
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
+
 getCardFromProperty
 -------------------
 
@@ -190,7 +194,6 @@ If the property is not natively a string, it can still be searched for
 using the string-encoded value of the property, e.g. "0". See
 nsIAbCard::getPropertyAsAUTF8String for more information. Empty values will
 return no match, to prevent spurious results.
-@exception NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
 Parameters
 ^^^^^^^^^^
@@ -211,6 +214,11 @@ Return value
 * :doc:`nsIAbCard`
 
   An nsIAbCard if one was found, else returns NULL.
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_IMPLEMENTED If the collection cannot do this.
 
 getCardsFromProperty
 --------------------
@@ -511,8 +519,6 @@ getIntValue
 @name  getXXXValue
 Helper functions to get different types of pref, but return a default
 value if a pref value was not obtained.
-@exception           NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
-be obtained (e.g. dirPrefId isn't set).
 
 Parameters
 ^^^^^^^^^^
@@ -526,6 +532,12 @@ Return value
 * long
 
   The value of the pref or the default value.
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
+  be obtained (e.g. dirPrefId isn't set).
 
 getBoolValue
 ------------
@@ -587,14 +599,18 @@ this list, recipients addresses will be hidden from one another by sending
 via BCC.
 @name  setXXXValue
 Helper functions to set different types of pref values.
-@exception           NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
-be obtained (e.g. dirPrefId isn't set).
 
 Parameters
 ^^^^^^^^^^
 
 * in string aName
 * in long aValue
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_INITIALIZED if the pref branch couldn't
+  be obtained (e.g. dirPrefId isn't set).
 
 setBoolValue
 ------------

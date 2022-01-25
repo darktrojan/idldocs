@@ -58,7 +58,6 @@ getAttributes
 
 Get all the LDAP attributes associated with a given property name, in
 order of precedence (highest to lowest).
-@exception   NS_ERROR_FAILURE if there is no entry for this property
 
 Parameters
 ^^^^^^^^^^
@@ -73,6 +72,11 @@ Return value
 * Array<ACString>
 
   an array of attributes
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE if there is no entry for this property
 
 getFirstAttribute
 -----------------
@@ -103,9 +107,6 @@ setAttributeList
 ``void setAttributeList(aProperty, aAttributeList, allowInconsistencies)``
 
 Set an existing mapping to the comma-separated list of attributes.
-@exception NS_ERROR_FAILURE    making this change would result in a map
-with an LDAP attribute pointing to more
-than one property
 
 Parameters
 ^^^^^^^^^^
@@ -113,6 +114,13 @@ Parameters
 * in ACString aProperty
 * in ACString aAttributeList
 * in boolean allowInconsistencies
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE    making this change would result in a map
+  with an LDAP attribute pointing to more
+  than one property
 
 getProperty
 -----------
@@ -142,7 +150,6 @@ getAllCardAttributes
 Get all attributes that may be used in an addressbook card via this
 property map (used for passing to to an LDAP search when you want
 everything that could be in a card returned).
-@exception NS_ERROR_FAILURE  there are no attributes in this property map
 
 Return value
 ^^^^^^^^^^^^
@@ -151,6 +158,11 @@ Return value
 
   a comma-separated list of attribute names
 
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE  there are no attributes in this property map
+
 getAllCardProperties
 --------------------
 
@@ -158,7 +170,6 @@ getAllCardProperties
 
 Get all properties that may be used in an addressbook card via this
 property map.
-@exception NS_ERROR_FAILURE  there are no attributes in this property map
 
 Return value
 ^^^^^^^^^^^^
@@ -167,16 +178,25 @@ Return value
 
   an array of properties
 
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE  there are no attributes in this property map
+
 checkState
 ----------
 
 ``void checkState()``
 
 Check that no LDAP attributes are listed in more than one property.
-@exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
-multiple times.  The object is now in an
-inconsistent state, and should be either
-manually repaired or discarded.
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE    one or more LDAP attributes are listed
+  multiple times.  The object is now in an
+  inconsistent state, and should be either
+  manually repaired or discarded.
 
 setFromPrefs
 ------------
@@ -184,15 +204,19 @@ setFromPrefs
 ``void setFromPrefs(aPrefBranchName)``
 
 Set any attributes specified in the given prefbranch on this object.
-@exception NS_ERROR_FAILURE    one or more LDAP attributes are listed
-multiple times.  The object is now in an
-inconsistent state, and should be either
-manually repaired or discarded.
 
 Parameters
 ^^^^^^^^^^
 
 * in ACString aPrefBranchName
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE    one or more LDAP attributes are listed
+  multiple times.  The object is now in an
+  inconsistent state, and should be either
+  manually repaired or discarded.
 
 setCardPropertiesFromLDAPMessage
 --------------------------------
@@ -201,8 +225,6 @@ setCardPropertiesFromLDAPMessage
 
 Set the properties on an addressbook card from the given LDAP message
 using the map in this object.
-@exception   NS_ERROR_FAILURE is thrown if no addressbook properties
-are found in the message
 
 Parameters
 ^^^^^^^^^^
@@ -213,3 +235,9 @@ Parameters
 * in :doc:`nsIAbCard` aCard
 
   is the card object whose values are to be set
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE is thrown if no addressbook properties
+  are found in the message

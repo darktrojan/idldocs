@@ -207,9 +207,6 @@ getProperty
 ``nsIVariant getProperty(name, defaultValue)``
 
 Returns a property for the given name.
-@exception NS_ERROR_NOT_AVAILABLE if the named property does not exist.
-@exception NS_ERROR_CANNOT_CONVERT_DATA if the property cannot be converted
-to the desired type.
 
 Parameters
 ^^^^^^^^^^
@@ -221,6 +218,13 @@ Return value
 ^^^^^^^^^^^^
 
 * :doc:`nsIVariant`
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_AVAILABLE if the named property does not exist.
+* NS_ERROR_CANNOT_CONVERT_DATA if the property cannot be converted
+  to the desired type.
 
 getPropertyAsAString
 --------------------
@@ -234,9 +238,6 @@ These functions convert values in the same manner as the default
 implementation of nsIVariant. Of particular note is that boolean variables
 are converted to integers as in C/C++ (true is a non-zero value), so that
 false will be converted to a string of "0" and not "false."
-@exception NS_ERROR_NOT_AVAILABLE if the named property does not exist.
-@exception NS_ERROR_CANNOT_CONVERT_DATA if the property cannot be converted
-to the desired type.
 
 Parameters
 ^^^^^^^^^^
@@ -247,6 +248,13 @@ Return value
 ^^^^^^^^^^^^
 
 * AString
+
+Throws
+^^^^^^
+
+* NS_ERROR_NOT_AVAILABLE if the named property does not exist.
+* NS_ERROR_CANNOT_CONVERT_DATA if the property cannot be converted
+  to the desired type.
 
 getPropertyAsAUTF8String
 ------------------------
@@ -414,7 +422,6 @@ The following types are supported:
 - base64xml
 - xml
 - vcard
-@exception NS_ERROR_ILLEGAL_VALUE if we do not recognize the type.
 
 Parameters
 ^^^^^^^^^^
@@ -429,6 +436,11 @@ Return value
 * AUTF8String
 
   A string containing the translated card.
+
+Throws
+^^^^^^
+
+* NS_ERROR_ILLEGAL_VALUE if we do not recognize the type.
 
 generatePhoneticName
 --------------------
