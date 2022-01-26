@@ -2,6 +2,8 @@
 nsIAbBooleanConditionTypes
 ==========================
 
+`mailnews/addrbook/public/nsIAbBooleanExpression.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbBooleanExpression.idl>`_
+
 Condition types
 
 Constants defining the types of condition

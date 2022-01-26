@@ -2,6 +2,8 @@
 nsILDAPErrors
 =============
 
+`mailnews/addrbook/public/nsILDAPErrors.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPErrors.idl>`_
+
 Error codes used in the LDAP XPCOM SDK.
 
 Taken from the Mozilla C SDK's ldap.h include file, these should be

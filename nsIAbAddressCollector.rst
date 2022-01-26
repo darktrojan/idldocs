@@ -2,6 +2,8 @@
 nsIAbAddressCollector
 =====================
 
+`mailnews/addrbook/public/nsIAbAddressCollector.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbAddressCollector.idl>`_
+
 nsIAbAddressCollector is the interface to the address collecter service.
 It will save and update the supplied addresses into the address book
 specified by the "mail.collect_addressbook" pref.

@@ -2,6 +2,8 @@
 nsIAbLDAPChangeLogQuery
 =======================
 
+`mailnews/addrbook/public/nsIAbLDAPReplicationQuery.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPReplicationQuery.idl>`_
+
 
 Methods
 =======

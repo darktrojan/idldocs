@@ -2,6 +2,8 @@
 nsIAbDirectory
 ==============
 
+`mailnews/addrbook/public/nsIAbDirectory.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbDirectory.idl>`_
+
 A top-level address book directory.
 
 Please note that in order to be properly instantiated by nsIAbManager, every

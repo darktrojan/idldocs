@@ -2,6 +2,8 @@
 nsILDAPControl
 ==============
 
+`mailnews/addrbook/public/nsILDAPControl.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPControl.idl>`_
+
 XPCOM representation of the C SDK LDAPControl structure.
 
 Properties

@@ -2,6 +2,8 @@
 nsIAbPreferMailFormat
 =====================
 
+`mailnews/addrbook/public/nsIAbCard.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbCard.idl>`_
+
 
 Constants
 =========

@@ -2,6 +2,8 @@
 nsIAbBooleanExpression
 ======================
 
+`mailnews/addrbook/public/nsIAbBooleanExpression.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbBooleanExpression.idl>`_
+
 N Boolean expression type
 
 Supports Unary Binary and N boolean expressions

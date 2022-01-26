@@ -2,6 +2,8 @@
 nsILDAPConnection
 =================
 
+`mailnews/addrbook/public/nsILDAPConnection.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPConnection.idl>`_
+
 
 Constants
 =========

@@ -2,6 +2,8 @@
 nsIAbAutoCompleteResult
 =======================
 
+`mailnews/addrbook/public/nsIAbAutoCompleteResult.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbAutoCompleteResult.idl>`_
+
 This interface is used to extend the nsIAutoCompleteResult interface to
 provide extra facilities for obtaining more details of the results of
 an address book search.

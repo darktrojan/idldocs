@@ -2,6 +2,8 @@
 nsIAbLDIFService
 ================
 
+`mailnews/addrbook/public/nsIAbLDIFService.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDIFService.idl>`_
+
 
 Methods
 =======

@@ -2,6 +2,8 @@
 nsIAbDirectoryQueryPropertyValue
 ================================
 
+`mailnews/addrbook/public/nsIAbDirectoryQuery.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbDirectoryQuery.idl>`_
+
 
 Properties
 ==========

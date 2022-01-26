@@ -2,6 +2,8 @@
 nsIAbLDAPProcessReplicationData
 ===============================
 
+`mailnews/addrbook/public/nsIAbLDAPReplicationData.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPReplicationData.idl>`_
+
 this service does replication of an LDAP directory to a local AB Database.
 
 Constants

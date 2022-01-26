@@ -2,6 +2,8 @@
 nsIAbLDAPReplicationQuery
 =========================
 
+`mailnews/addrbook/public/nsIAbLDAPReplicationQuery.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPReplicationQuery.idl>`_
+
 this interface provides methods to perform LDAP Replication Queries
 
 Methods

@@ -2,6 +2,8 @@
 nsIAbBooleanConditionString
 ===========================
 
+`mailnews/addrbook/public/nsIAbBooleanExpression.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbBooleanExpression.idl>`_
+
 String condition
 
 A string condition represents a leaf node in a

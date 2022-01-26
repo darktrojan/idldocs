@@ -2,6 +2,8 @@
 nsILDAPModification
 ===================
 
+`mailnews/addrbook/public/nsILDAPModification.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPModification.idl>`_
+
 
 Constants
 =========

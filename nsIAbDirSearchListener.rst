@@ -2,6 +2,8 @@
 nsIAbDirSearchListener
 ======================
 
+`mailnews/addrbook/public/nsIAbDirSearchListener.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbDirSearchListener.idl>`_
+
 Listener callbacks for addressbook nsIAbDirectory searches and queries.
 
 Methods

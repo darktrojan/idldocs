@@ -1,14 +1,9 @@
-.. idl docs documentation master file, created by
-   sphinx-quickstart on Mon Jan 24 14:58:24 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to idl docs's documentation!
-====================================
+Thunderbird Interfaces
+======================
 
 .. toctree::
   :maxdepth: 1
-  :caption: Contents:
+  :caption: Address Book
 
   nsIAbAddressCollector
   nsIAbAutoCompleteResult
@@ -17,11 +12,11 @@ Welcome to idl docs's documentation!
   nsIAbBooleanExpression
   nsIAbBooleanOperationTypes
   nsIAbCard
+  nsIAbDirectory
+  nsIAbDirectoryQuery
   nsIAbDirectoryQueryArguments
   nsIAbDirectoryQueryPropertyValue
   nsIAbDirectoryQueryProxy
-  nsIAbDirectoryQuery
-  nsIAbDirectory
   nsIAbDirSearchListener
   nsIAbLDAPAttributeMap
   nsIAbLDAPAttributeMapService
@@ -39,21 +34,337 @@ Welcome to idl docs's documentation!
   nsILDAPConnection
   nsILDAPControl
   nsILDAPErrors
-  nsILDAPMessageListener
   nsILDAPMessage
+  nsILDAPMessageListener
   nsILDAPModification
   nsILDAPOperation
   nsILDAPService
   nsILDAPSyncQuery
-  nsILDAPURLParserResult
-  nsILDAPURLParser
   nsILDAPURL
+  nsILDAPURLParser
+  nsILDAPURLParserResult
   nsIMsgVCardService
 
+.. toctree::
+  :maxdepth: 1
+  :caption: Base
 
-Indices and tables
-==================
+  mozINewMailListener
+  mozINewMailNotificationService
+  msgIOAuth2Module
+  msgIOAuth2ModuleListener
+  nsICopyMessageListener
+  nsICopyMessageStreamListener
+  nsIFolderListener
+  nsIFolderLookupService
+  nsIIncomingServerListener
+  nsIJSIterator
+  nsIMailAuthModule
+  nsIMapiRegistry
+  nsIMessenger
+  nsIMessengerMigrator
+  nsIMessengerOSIntegration
+  nsIMessengerWindowService
+  nsIMessengerWindowsIntegration
+  nsIMsgAccount
+  nsIMsgAccountManager
+  nsIMsgAccountManagerExtension
+  nsIMsgAsyncPromptCallback
+  nsIMsgAsyncPrompter
+  nsIMsgAsyncPromptListener
+  nsIMsgBiffManager
+  nsIMsgContentPolicy
+  nsIMsgCopyService
+  nsIMsgCopyServiceListener
+  nsIMsgCustomColumnHandler
+  nsIMsgDBHdr
+  nsIMsgDBView
+  nsIMsgDBViewCommandUpdater
+  nsIMsgEnumerator
+  nsIMsgFolder
+  nsIMsgFolderCache
+  nsIMsgFolderCacheElement
+  nsIMsgFolderCompactor
+  nsIMsgFolderListener
+  nsIMsgFolderNotificationService
+  nsIMsgFolderService
+  nsIMsgI18NUrl
+  nsIMsgIdentity
+  nsIMsgIncomingServer
+  nsIMsgJSTree
+  nsIMsgKeyArray
+  nsIMsgMailNewsUrl
+  nsIMsgMailSession
+  nsIMsgMdnGenerator
+  nsIMsgMessageFetchPartService
+  nsIMsgMessageService
+  nsIMsgMessageUrl
+  nsIMsgOfflineManager
+  nsIMsgPluggableStore
+  nsIMsgProgress
+  nsIMsgProtocolHandler
+  nsIMsgProtocolInfo
+  nsIMsgPurgeService
+  nsIMsgShutdownService
+  nsIMsgShutdownTask
+  nsIMsgStatusFeedback
+  nsIMsgTag
+  nsIMsgTagService
+  nsIMsgThread
+  nsIMsgThreadEnumerator
+  nsIMsgUserFeedbackListener
+  nsIMsgWindow
+  nsIMsgWindowCommands
+  nsIMsgWindowData
+  nsIMsgWindowTest
+  nsISpamSettings
+  nsIStatusBarBiffManager
+  nsIStopwatch
+  nsISubscribableServer
+  nsISubscribeListener
+  nsIUrlListener
+  nsIUserInfo
+  nsMsgAuthMethod
+  nsMsgFolderFlags
+  nsMsgMessageFlags
+  nsMsgNavigationType
+  nsMsgPriority
+  nsMsgSocketType
+  nsMsgViewCommandCheckState
+  nsMsgViewCommandType
+  nsMsgViewFlagsType
+  nsMsgViewNotificationCode
+  nsMsgViewSortOrder
+  nsMsgViewSortType
+  nsMsgViewType
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. toctree::
+  :maxdepth: 1
+  :caption: Compose
+
+  nsIMailtoUrl
+  nsIMsgAttachedFile
+  nsIMsgAttachment
+  nsIMsgAttachmentData
+  nsIMsgCompConvertible
+  nsIMsgCompDeliverMode
+  nsIMsgCompFields
+  nsIMsgCompFormat
+  nsIMsgCompose
+  nsIMsgComposeNotificationType
+  nsIMsgComposeParams
+  nsIMsgComposeProgressParams
+  nsIMsgComposeSecure
+  nsIMsgComposeSendListener
+  nsIMsgComposeService
+  nsIMsgComposeStateListener
+  nsIMsgCompSaveType
+  nsIMsgCompSendFormat
+  nsIMsgCompType
+  nsIMsgCompUtils
+  nsIMsgCopy
+  nsIMsgEmbeddedImageData
+  nsIMsgProcessReport
+  nsIMsgQuote
+  nsIMsgQuoteListener
+  nsIMsgQuotingOutputStreamListener
+  nsIMsgSend
+  nsIMsgSendLater
+  nsIMsgSendLaterListener
+  nsIMsgSendListener
+  nsIMsgSendReport
+  nsISmtpServer
+  nsISmtpService
+  nsISmtpUrl
+
+.. toctree::
+  :maxdepth: 1
+  :caption: DB
+
+  nsIDBChangeAnnouncer
+  nsIDBChangeListener
+  nsIDBFolderInfo
+  nsIMsgDatabase
+  nsIMsgDBService
+  nsIMsgDownloadSettings
+  nsIMsgOfflineImapOperation
+  nsIMsgRetentionSettings
+  nsINewsDatabase
+  nsMsgDBCommitType
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Extensions
+
+  nsIFts3Tokenizer
+  nsIMsgMailView
+  nsIMsgMailViewList
+  nsICertPickDialogs
+  nsICMSDecoder
+  nsICMSDecoderJS
+  nsICMSEncoder
+  nsICMSMessage
+  nsICMSMessageErrors
+  nsICMSSecureMessage
+  nsIEncryptedSMIMEURIsService
+  nsIMsgSMIMEHeaderSink
+  nsISMimeJSHelper
+  nsISMimeVerificationListener
+  nsIUserCertPicker
+
+.. toctree::
+  :maxdepth: 1
+  :caption: IMAP
+
+  ImapOnlineCopyStateType
+  nsAutoSyncStrategyDecisions
+  nsIAutoSyncFolderStrategy
+  nsIAutoSyncManager
+  nsIAutoSyncMgrListener
+  nsIAutoSyncMsgStrategy
+  nsIAutoSyncState
+  nsIImapFlagAndUidState
+  nsIImapHeaderInfo
+  nsIImapHeaderXferInfo
+  nsIImapIncomingServer
+  nsIImapMailFolderSink
+  nsIImapMessageSink
+  nsIImapMockChannel
+  nsIImapProtocol
+  nsIImapProtocolSink
+  nsIImapServerSink
+  nsIImapService
+  nsIImapUrl
+  nsIMailboxSpec
+  nsImapContentModifiedTypes
+  nsIMsgImapFolderProps
+  nsIMsgImapMailFolder
+  nsIMsgQuota
+  nsMsgImapDeleteModels
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Import
+
+  nsIImportABDescriptor
+  nsIImportAddressBooks
+  nsIImportFieldMap
+  nsIImportFilters
+  nsIImportGeneric
+  nsIImportMail
+  nsIImportMailboxDescriptor
+  nsIImportModule
+  nsIImportService
+  nsIImportSettings
+
+.. toctree::
+  :maxdepth: 1
+  :caption: International
+
+  nsICharsetConverterManager
+
+.. toctree::
+  :maxdepth: 1
+  :caption: JS Account
+
+  msgIDelegateList
+  msgIJaUrl
+  msgIOverride
+  msgIFooUrl
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Local
+
+  nsILocalMailIncomingServer
+  nsIMailboxService
+  nsIMailboxUrl
+  nsIMsgLocalMailFolder
+  nsIMsgParseMailMsgState
+  nsINewsBlogFeedDownloader
+  nsINoIncomingServer
+  nsINoneService
+  nsIPop3IncomingServer
+  nsIPop3Protocol
+  nsIPop3Service
+  nsIPop3ServiceListener
+  nsIPop3Sink
+  nsIPop3URL
+  nsIRssIncomingServer
+  nsIRssService
+
+.. toctree::
+  :maxdepth: 1
+  :caption: MAPI
+
+  nsIMapiSupport
+
+.. toctree::
+  :maxdepth: 1
+  :caption: MIME
+
+  msgIAddressObject
+  msgIStructuredHeaders
+  msgIWritableStructuredHeaders
+  nsIMimeConverter
+  nsIMimeEmitter
+  nsIMimeHeaders
+  nsIMimeMiscStatus
+  nsIMimeStreamConverter
+  nsIMimeStreamConverterListener
+  nsIMsgHeaderParser
+  nsIMsgHeaderSink
+  nsIPgpMimeProxy
+  nsISimpleMimeConverter
+  nsMimeHeaderDisplayTypes
+  nsMimeOutput
+
+.. toctree::
+  :maxdepth: 1
+  :caption: News
+
+  nsIMsgNewsFolder
+  nsIMsgOfflineNewsState
+  nsINewsDownloadDialogArgs
+  nsINNTPArticleList
+  nsINntpIncomingServer
+  nsINNTPNewsgroupList
+  nsINNTPNewsgroupPost
+  nsINNTPProtocol
+  nsINntpService
+  nsINntpUrl
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Search
+
+  nsIJunkMailClassificationListener
+  nsIJunkMailPlugin
+  nsIMsgCorpus
+  nsIMsgFilter
+  nsIMsgFilterCustomAction
+  nsIMsgFilterHitNotify
+  nsIMsgFilterList
+  nsIMsgFilterPlugin
+  nsIMsgFilterService
+  nsIMsgOperationListener
+  nsIMsgRuleAction
+  nsIMsgSearchAdapter
+  nsIMsgSearchCustomTerm
+  nsIMsgSearchNotify
+  nsIMsgSearchScopeTerm
+  nsIMsgSearchSession
+  nsIMsgSearchTerm
+  nsIMsgSearchValidityManager
+  nsIMsgSearchValidityTable
+  nsIMsgSearchValue
+  nsIMsgTraitClassificationListener
+  nsIMsgTraitDetailListener
+  nsIMsgTraitService
+  nsMsgFilterMotion
+  nsMsgFilterType
+  nsMsgSearchAttrib
+  nsMsgSearchBooleanOp
+  nsMsgSearchOp
+  nsMsgSearchScope
+  nsMsgSearchWidget

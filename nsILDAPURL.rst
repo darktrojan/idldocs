@@ -2,6 +2,8 @@
 nsILDAPURL
 ==========
 
+`mailnews/addrbook/public/nsILDAPURL.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPURL.idl>`_
+
 Strings in methods inherited from nsIURI, which are using XPIDL
 |string| types, are expected to be UTF8 encoded. All such strings
 in this interface, except attribute types (e.g. "cn"), should in fact

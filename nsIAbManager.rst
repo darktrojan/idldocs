@@ -2,6 +2,8 @@
 nsIAbManager
 ============
 
+`mailnews/addrbook/public/nsIAbManager.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbManager.idl>`_
+
 nsIAbManager is an interface to the main address book manager
 via the contract id "@mozilla.org/abmanager;1"
 

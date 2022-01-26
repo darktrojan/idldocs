@@ -2,6 +2,8 @@
 nsILDAPSyncQuery
 ================
 
+`mailnews/addrbook/public/nsILDAPSyncQuery.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPSyncQuery.idl>`_
+
 
 Methods
 =======

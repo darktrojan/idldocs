@@ -2,6 +2,8 @@
 nsIAbLDAPReplicationService
 ===========================
 
+`mailnews/addrbook/public/nsIAbLDAPReplicationService.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPReplicationService.idl>`_
+
 this service does replication of an LDAP directory to a local AB Database.
 
 Methods

@@ -2,6 +2,8 @@
 nsILDAPMessageListener
 ======================
 
+`mailnews/addrbook/public/nsILDAPMessageListener.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPMessageListener.idl>`_
+
 A callback interface to be implemented by any objects that want to
 receive results from an nsILDAPOperation (ie nsILDAPMessages) as they
 come in.

@@ -2,6 +2,8 @@
 nsILDAPURLParserResult
 ======================
 
+`mailnews/addrbook/public/nsILDAPURL.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPURL.idl>`_
+
 A structure to represent an LDAP URL.
 
 Properties

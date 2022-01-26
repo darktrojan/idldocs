@@ -2,6 +2,8 @@
 nsIAbCard
 =========
 
+`mailnews/addrbook/public/nsIAbCard.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbCard.idl>`_
+
 An interface representing an address book card.
 
 None of these IDs will be reflected in the property collection. Neither
@@ -311,9 +313,12 @@ Assigns the given to value to the property of the given name.
 Should the property exist, its value will be overwritten. An
 implementation may impose additional semantic constraints for certain
 properties. However, such constraints might not be checked by this method.
-@warning A value MUST be convertible to a string; if this convention is not
-followed, consumers of cards may fail unpredictably or return incorrect
-results.
+
+.. warning::
+
+  A value MUST be convertible to a string; if this convention is not
+  followed, consumers of cards may fail unpredictably or return incorrect
+  results.
 
 Parameters
 ^^^^^^^^^^
@@ -501,11 +506,14 @@ Returns true if this card is equal to the other card.
 The default implementation defines equal as this card pointing to the
 same object as @arg aCard; another implementation defines it as equality of
 properties and values.
-@warning The exact nature of equality is still undefined, and actual
-results may not match theoretical results. Most notably, the code
-<tt>a.equals(b) == b.equals(a)</tt> might not return true. In
-particular, calling equals on cards from different address books
-may return inaccurate results.
+
+.. warning::
+
+  The exact nature of equality is still undefined, and actual
+  results may not match theoretical results. Most notably, the code
+  <tt>a.equals(b) == b.equals(a)</tt> might not return true. In
+  particular, calling equals on cards from different address books
+  may return inaccurate results.
 
 Parameters
 ^^^^^^^^^^

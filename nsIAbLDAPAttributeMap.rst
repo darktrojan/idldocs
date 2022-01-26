@@ -2,6 +2,8 @@
 nsIAbLDAPAttributeMap
 =====================
 
+`mailnews/addrbook/public/nsIAbLDAPAttributeMap.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPAttributeMap.idl>`_
+
 A mapping between addressbook properties and ldap attributes.
 
 Each addressbook property can map to one or more attributes.  If

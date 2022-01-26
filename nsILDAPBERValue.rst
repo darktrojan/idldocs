@@ -2,6 +2,8 @@
 nsILDAPBERValue
 ===============
 
+`mailnews/addrbook/public/nsILDAPBERValue.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPBERValue.idl>`_
+
 Representation of a BER value as an interface containing an array of
 bytes.  Someday this should perhaps be obsoleted by a better, more
 generalized version of nsIByteBuffer, but that's currently not even

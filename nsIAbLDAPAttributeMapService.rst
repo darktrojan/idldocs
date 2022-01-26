@@ -2,6 +2,8 @@
 nsIAbLDAPAttributeMapService
 ============================
 
+`mailnews/addrbook/public/nsIAbLDAPAttributeMap.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsIAbLDAPAttributeMap.idl>`_
+
 The nsIAbLDAPAttributeMapService is used to build and hold a cache
 of maps.
 

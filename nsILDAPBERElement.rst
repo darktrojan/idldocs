@@ -2,6 +2,8 @@
 nsILDAPBERElement
 =================
 
+`mailnews/addrbook/public/nsILDAPBERElement.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPBERElement.idl>`_
+
 nsILDAPBERElement is a wrapper interface for a C-SDK BerElement object.
 Typically, this is used as an intermediate object to aid in the manual
 construction of a BER value.  Once the construction is completed by calling

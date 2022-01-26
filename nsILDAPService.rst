@@ -2,6 +2,8 @@
 nsILDAPService
 ==============
 
+`mailnews/addrbook/public/nsILDAPService.idl <https://hg.mozilla.org/comm-central/file/tip/mailnews/addrbook/public/nsILDAPService.idl>`_
+
 This interface is a catch-all for any LDAP functionality that is needed
 in XPCOM and not provided elsewhere.
 
