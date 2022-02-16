@@ -486,6 +486,7 @@ getFilterList
 Get the server's list of filters. (Or in the case of news, the
 filter list for this newsgroup)
 This list SHOULD be used for all incoming messages.
+
 Since the returned nsIMsgFilterList is mutable, it is not necessary to call
 setFilterList after the filters have been changed.
 
@@ -507,6 +508,7 @@ setFilterList
 ``void setFilterList(filterList)``
 
 Set the server's list of filters.
+
 Note that this does not persist the filter list. To change the contents
 of the existing filters, use getFilterList and mutate the values as
 appropriate.
@@ -917,6 +919,7 @@ onFlagChange
 
 Called to notify the database and/or listeners of a change of flag. The
 known flags are defined in nsMsgFolderFlags.h
+
 @note        This doesn't need to be called for normal flag changes via
 the *Flag functions on this interface.
 
@@ -1654,6 +1657,7 @@ findSubFolder
 ``nsIMsgFolder findSubFolder(escapedSubFolderName)``
 
 Finds the sub folder with the specified name.
+
 @note                        Even if the folder doesn't currently exist,
 a nsIMsgFolder may be returned.
 
@@ -1973,19 +1977,25 @@ getInheritedStringProperty
 
 @} */
 Gets an inherited string property from the folder.
+
 If the forcePropertyEmpty boolean is set (see below), return an
 empty string.
+
 If the specified folder has a non-empty value for the property,
 return that value. Otherwise, return getInheritedStringProperty
 for the folder's parent.
+
 If a folder is the root folder for a server, then instead of
 checking the folder property, check the property of the same name
 for the server using nsIMsgIncomingServer.getCharValue(...)
+
 Note nsIMsgIncomingServer.getCharValue for a server inherits from
 the preference mail.server.default.(propertyName) as a global value
+
 (ex: if propertyName = "IAmAGlobal" and no folder nor server properties
 are set, then the inherited property will return the preference value
 mail.server.default.IAmAGlobal)
+
 If the propertyName is undefined, returns an empty, void string.
 
 Parameters

@@ -26,12 +26,15 @@ openFolderDB
 ``nsIMsgDatabase openFolderDB(aFolder, aLeaveInvalidDB)``
 
 Opens a database for a given folder.
+
 This method is preferred over nsIMsgDBService::openMailDBFromFile if the
 caller has an actual nsIMsgFolder around. If the database detects that it
 is unreadable or out of date (using nsIMsgDatabase::outOfDate) it will
 destroy itself and prepare to be rebuilt, unless aLeaveInvalidDB is true.
+
 If one gets a NS_MSG_ERROR_FOLDER_SUMMARY_MISSING message, then one
 should call nsIMsgDBService::createNewDB to create the new database.
+
 @see nsIMsgDatabase::Open
 @see nsIMsgDBService::createNewDB
 
@@ -114,10 +117,12 @@ createNewDB
 ``nsIMsgDatabase createNewDB(aFolder)``
 
 Creates a new database for the given folder.
+
 If the database already exists, it will return the database, emit a
 warning, but not fully initialize it. For this reason, it should only be
 used when it is known that the database does not exist, such as when
 nsIMsgDBService::openFolderDB throws an error.
+
 @see nsIMsgDBService::openFolderDB
 
 Parameters
@@ -136,15 +141,18 @@ openMailDBFromFile
 ``nsIMsgDatabase openMailDBFromFile(aFile, aFolder, aCreate, aLeaveInvalidDB)``
 
 Opens or creates a database for a given file.
+
 This method should only be used if the caller does not have a folder
 instance, because the resulting db and message headers retrieved from the
 database would not know their owning folder, which limits their usefulness.
 For this reason, one should use nsIMsgDBService::openFolderDB instead
 except under special circumstances.
+
 Unlike nsIMsgDBService::openFolderDB, there is no corresponding method to
 create a new database if opening the database failed. However, this method
 will never throw NS_MSG_ERROR_FOLDER_SUMMARY_MISSING, so no corresponding
 method is needed.
+
 @see nsIMsgDBService::openFolderDB
 @see nsIMsgDatabase::Open
 
@@ -176,6 +184,7 @@ registerPendingListener
 ``void registerPendingListener(aFolder, aListener)``
 
 Adds the given listener to the listener set for the folder.
+
 Since the message database will likely be opened and closed many times, by
 registering using this method, one will be guaranteed to see all subsequent
 modifications. This will also add the listener to the database if it is

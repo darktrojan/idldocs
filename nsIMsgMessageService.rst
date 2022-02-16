@@ -157,6 +157,7 @@ streamMessage
 This method streams a message to the passed in consumer. If aConvertData is true, it
 will create a stream converter from message rfc822 to star/star. It will also tack
 aAdditionalHeader onto the url (e.g., "header=filter").
+
 @note If we're offline, then even if aLocalOnly is false, we won't stream over the
 network
 
@@ -186,6 +187,7 @@ streamHeaders
 This method streams a message's headers to the passed in consumer.
 This is for consumers who want a particular header but don't
 want to stream the whole message.
+
 @note If we're offline, then even if aLocalOnly is false, we won't stream over the
 network
 

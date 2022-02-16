@@ -104,6 +104,14 @@ childNodes
 
 ``readonly attribute Array<nsIAbDirectory> childNodes``
 
+childCardCount
+--------------
+
+``readonly attribute unsigned long childCardCount``
+
+Get the count of cards associated with the directory. This includes the
+cards associated with the mailing lists too.
+
 childCards
 ----------
 
@@ -154,9 +162,12 @@ cardForEmailAddress
 ``nsIAbCard cardForEmailAddress(emailAddress)``
 
 Returns an address book card for the specified email address if found.
+
 If there are multiple cards with the given email address, this method will
 return one of these cards in an implementation-defined manner.
+
 Matching is performed in a case-insensitive manner.
+
 This method performs a synchronous operation. If the collection cannot do
 the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
 
@@ -188,10 +199,13 @@ getCardFromProperty
 ``nsIAbCard getCardFromProperty(aProperty, aValue, aCaseSensitive)``
 
 Returns an address book card for the specified property if found.
+
 If there are multiple cards with the given value for the property, this
 method will return one of these cards in an implementation-defined manner.
+
 This method performs a synchronous operation. If the collection cannot do
 the search in such a manner, then it should throw NS_ERROR_NOT_IMPLEMENTED.
+
 If the property is not natively a string, it can still be searched for
 using the string-encoded value of the property, e.g. "0". See
 nsIAbCard::getPropertyAsAUTF8String for more information. Empty values will
@@ -228,6 +242,7 @@ getCardsFromProperty
 ``Array<nsIAbCard> getCardsFromProperty(aProperty, aValue, aCaseSensitive)``
 
 Returns all address book cards with a specific property matching value
+
 This function is almost identical to getCardFromProperty, with the
 exception of returning all cards rather than just the first.
 
@@ -284,8 +299,10 @@ search
 ``void search(query, searchString, listener)``
 
 Searches the directory for cards matching query.
+
 The query takes the form:
 (BOOL1(FIELD1,OP1,VALUE1)..(FIELDn,OPn,VALUEn)(BOOL2(FIELD1,OP1,VALUE1)...)...)
+
 BOOLn   A boolean operator joining subsequent terms delimited by ().
 For possible values see CreateBooleanExpression().
 FIELDn  An addressbook card data field.
@@ -388,6 +405,7 @@ addCard
 ``nsIAbCard addCard(card)``
 
 Adds a card to the database.
+
 This card does not need to be of the same type as the database, e.g., one
 can add an nsIAbLDAPCard to an nsIAbMDBDirectory.
 
@@ -519,6 +537,7 @@ getIntValue
 ``long getIntValue(aName, aDefaultValue)``
 
 @name  getXXXValue
+
 Helper functions to get different types of pref, but return a default
 value if a pref value was not obtained.
 
@@ -595,11 +614,13 @@ setIntValue
 ``void setIntValue(aName, aValue)``
 
 The following attributes are read from an nsIAbDirectory via the above methods:
+
 HidesRecipients (Boolean)
 If true, and this nsIAbDirectory is a mailing list, then when sending mail to
 this list, recipients addresses will be hidden from one another by sending
 via BCC.
 @name  setXXXValue
+
 Helper functions to set different types of pref values.
 
 Parameters

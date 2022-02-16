@@ -100,6 +100,7 @@ findCertByEmailAddress
 ``nsIX509Cert findCertByEmailAddress(aEmailAddress, aRequireValidCert)``
 
 Find a certificate by email address.
+
 (Note: This function is used primarily for testing purposes. It runs
 on the main thread, which may cause nested event loop spinning.)
 (TODO: A better place for this might be nsISMimeJSHelper.idl,

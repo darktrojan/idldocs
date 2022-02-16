@@ -31,6 +31,7 @@ parseEncodedHeader
 ``Array<msgIAddressObject> parseEncodedHeader(aEncodedHeader, aHeaderCharset, aPreserveGroups)``
 
 Parse an address-based header that has not yet been 2047-decoded.
+
 The result of this method is an array of objects described in the above
 comment. Note that the header is a binary string that will be decoded as if
 passed into nsIMimeConverter.
@@ -75,6 +76,7 @@ parseDecodedHeader
 ``Array<msgIAddressObject> parseDecodedHeader(aDecodedHeader, aPreserveGroups)``
 
 Parse an address-based header that has been 2047-decoded.
+
 The result of this method is an array of objects described in the above
 comment. Note that the header is a binary string that will be decoded as if
 passed into nsIMimeConverter.
@@ -98,6 +100,7 @@ makeMimeHeader
 ``AString makeMimeHeader(aAddresses)``
 
 Given an array of addresses, make a MIME header suitable for emission.
+
 The return value of this method is not directly suitable for use in a MIME
 message but rather needs to be passed through nsIMimeConverter first to
 have RFC-2047 encoding applied and the resulting output wrapped to adhere
@@ -121,6 +124,7 @@ extractFirstName
 ``AString extractFirstName(aDecodedHeader)``
 
 Return the first address in the list in a format suitable for display.
+
 This is largely a convenience method for handling From headers (or similar),
 which are expected to only have a single element in them. It is exactly
 equivalent to saying (parseDecodedHeader(decodedHeader))[0].toString().
@@ -145,6 +149,7 @@ removeDuplicateAddresses
 Returns a copy of the input which may have had some addresses removed.
 Addresses are removed if they are already in either of the supplied
 address lists.
+
 Addresses are considered to be the same if they contain the same email
 part (case-insensitive). Since the email part should never be RFC
 2047-encoded, this method should work whether or not the header is
@@ -202,6 +207,7 @@ makeFromDisplayAddress
 
 Return an array of structured mailbox objects for the given display name
 string.
+
 The string is expected to be a comma-separated sequence of strings that
 would be produced by msgIAddressObject::toString(). For example, the string
 "Bond, James <agent007@mi5.invalid>" would produce one address object,
@@ -246,6 +252,7 @@ makeMimeAddress
 
 Given a name and email address, produce a string that is suitable for
 emitting in a MIME header (after applying RFC 2047 encoding).
+
 @note This is a temporary method.
 
 Parameters

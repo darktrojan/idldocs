@@ -133,6 +133,7 @@ Async version of nsICMSMessage::VerifyDetachedSignature.
 Code will be executed on a background thread and
 availability of results will be notified using a
 call to nsISMimeVerificationListener.
+
 Set aDigestType to one of the values from nsICryptoHash.
 
 Parameters

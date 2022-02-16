@@ -47,6 +47,7 @@ The SMTP server defined
 in the aSenderIdentity object (see nsIMsgIdentity) will be used to send
 the message. If there is no SMTP server defined in aSenderIdentity, the
 default SMTP server will be used.
+
 @note The file to send must be in the format specified by RFC 2822 for
 sending data. This includes having the correct CRLF line endings
 throughout the file, and the <CRLF>.<CRLF> at the end of the file.

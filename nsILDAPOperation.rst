@@ -183,6 +183,7 @@ Throws
   client is using
 * NS_ERROR_UNEXPECTED           an unexpected error has
   occurred
+
   XXX doesn't currently handle LDAPControl params
 
 deleteExt
@@ -215,6 +216,7 @@ Throws
   client is using
 * NS_ERROR_UNEXPECTED           an unexpected error has
   occurred
+
   XXX doesn't currently handle LDAPControl params
 
 modifyExt
@@ -248,6 +250,7 @@ Throws
   client is using
 * NS_ERROR_UNEXPECTED           an unexpected error has
   occurred
+
   XXX doesn't currently handle LDAPControl params
 
 rename
@@ -280,6 +283,7 @@ Throws
   client is using
 * NS_ERROR_UNEXPECTED           an unexpected error has
   occurred
+
   XXX doesn't currently handle LDAPControl params
 
 searchExt
@@ -324,6 +328,7 @@ abandonExt
 ``void abandonExt()``
 
 Cancels an async operation that is in progress.
+
 XXX controls not supported yet
 
 Throws

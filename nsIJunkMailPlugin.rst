@@ -151,6 +151,7 @@ setMessageClassification
 
 Called when a user forces the classification of a message. Should
 cause the training set to be updated appropriately.
+
 @arg aMsgURI                     URI of the message to be classified
 @arg aOldUserClassification      Was it previous manually classified
 by the user?  If so, how?

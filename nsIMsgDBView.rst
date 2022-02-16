@@ -333,6 +333,7 @@ getFlagsAt
 ``unsigned long getFlagsAt(aIndex)``
 
 Get the view flags at the passed in index.
+
 @ return - 32 bit view flags (e.g., elided)
 
 Parameters
@@ -431,6 +432,7 @@ message. In that case, we won't include the children of the collapsed
 thread. However, the numSelected attribute will count those children,
 because the summarizeSelection code uses that to know that it should
 try to summarize the selection.
+
 If the user has right-clicked on a message, this will return that message
 (and any collapsed children if so enabled) and not the selection prior to
 the right-click.
@@ -718,6 +720,7 @@ cellTextForColumn
 ``AString cellTextForColumn(aRow, aColumnName)``
 
 Scriptable accessor for the cell text for a column
+
 @notes This does not work for custom columns yet.
 
 Parameters

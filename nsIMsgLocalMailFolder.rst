@@ -167,6 +167,7 @@ addMessageBatch
 Add one or more messages to the end of the folder in a single batch. Each
 batch requires an fsync() on the mailbox file so it is a good idea to
 try and minimize the number of calls you make to this method or addMessage.
+
 Filters are applied, if applicable.
 
 Parameters

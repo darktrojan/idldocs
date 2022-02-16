@@ -141,6 +141,7 @@ getNntpChannel
 ``nsIChannel getNntpChannel(uri, window)``
 
 Get a new NNTP channel to run the URI.
+
 If the server has used up all of its connections, this will place the URI
 in the queue to be run when one is freed.
 
@@ -161,6 +162,7 @@ loadNewsUrl
 ``void loadNewsUrl(uri, window, consumer)``
 
 Enqueues a URI to be run when we have a free connection.
+
 If there is one already free, it will be immediately started.
 
 Parameters
@@ -200,6 +202,7 @@ containsNewsgroup
 ``boolean containsNewsgroup(escapedName)``
 
 Returns whether or not the server has subscribed to the given newsgroup.
+
 Note that the name here is intended to be escaped; however, since `%' is
 not a legal newsgroup name, it is possibly safe to pass in an unescaped
 newsgroup name.
@@ -341,6 +344,7 @@ findGroup
 ``nsIMsgNewsFolder findGroup(name)``
 
 Returns the folder corresponding to the given group.
+
 Note that this name is expected to be unescaped.
 @note If the group does not exist, a bogus news folder will be returned.
 DO NOT call this method unless you are sure that the newsgroup

@@ -17,7 +17,9 @@ createFilter
 
 Generates and returns an LDAP search filter by substituting
 aValue, aAttr, aPrefix, and aSuffix into aPattern.
+
 Exposes the functionality of ldap_create_filter() via XPCOM.
+
 There is some documentation on the filter template format
 (passed in via aPattern) here:
 https://docs.oracle.com/cd/E19957-01/817-6707/filter.html

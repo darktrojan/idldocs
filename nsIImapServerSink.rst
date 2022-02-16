@@ -373,6 +373,7 @@ ask the async prompt service to notify us when we can put up a prompt.
 When that notification is received, we prompt the user and set the
 password on the protocol object, and signal a monitor that the imap
 thread should be waiting on.
+
 rv is NS_MSG_PASSWORD_PROMPT_CANCELLED if the user cancels the
 password prompt. That's not an exception, however.
 

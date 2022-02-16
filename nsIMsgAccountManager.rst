@@ -161,13 +161,17 @@ removeIncomingServer
 ``void removeIncomingServer(aServer, aRemoveFiles)``
 
 Removes the server from the list of servers
-@throws NS_ERROR_FAILURE if server not found
 
 Parameters
 ^^^^^^^^^^
 
 * in :doc:`nsIMsgIncomingServer` aServer
 * in boolean aRemoveFiles
+
+Throws
+^^^^^^
+
+* NS_ERROR_FAILURE if server not found
 
 getIdentity
 -----------

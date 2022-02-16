@@ -44,13 +44,16 @@ Parameters
 * in :doc:`nsIAbDirectory` aDirectory
 
   The address book to import addresses into.
+
 * in :doc:`nsIFile` aSrc
 
   The file to import addresses from.
+
 * in boolean aStoreLocAsHome
 
   Stores the address as a home rather than work
   address.
+
 * inout unsigned long aProgress
 
   May be null, but if a pointer is supplied,

@@ -451,6 +451,7 @@ getPasswordWithUI
 
 Attempts to get the password first from the password manager, if that
 fails it will attempt to get it from the user if aMsgWindow is supplied.
+
 @note NS_MSG_PASSWORD_PROMPT_CANCELLED is a success code that is returned
 if the prompt was presented to the user but the user cancelled the
 prompt.
@@ -490,9 +491,11 @@ getFilterList
 ``nsIMsgFilterList getFilterList(aMsgWindow)``
 
 Get the server's list of filters.
+
 This SHOULD be the same filter list as the root folder's, if the server
 supports per-folder filters. Furthermore, this list SHOULD be used for all
 incoming messages.
+
 Since the returned nsIMsgFilterList is mutable, it is not necessary to call
 setFilterList after the filters have been changed.
 
@@ -514,6 +517,7 @@ setFilterList
 ``void setFilterList(aFilterList)``
 
 Set the server's list of filters.
+
 Note that this does not persist the filter list. To change the contents
 of the existing filters, use getFilterList and mutate the values as
 appropriate.
@@ -651,13 +655,16 @@ getBoolValue
 ``boolean getBoolValue(attr)``
 
 Get or set the value as determined by the preference tree.
+
 These methods MUST NOT fail if the preference is not set, and therefore
 they MUST have a default value. This default value is provided in practice
 by use of a default preference tree. The standard format for the pref
 branches are <tt>mail.server.<i>key</i>.</tt> for per-server preferences,
 such that the preference is <tt>mail.server.<i>key</i>.<i>attr</i></tt>.
+
 The attributes are passed in as strings for ease of access by the C++
 consumers of this method.
+
 @{
 
 Parameters
@@ -768,18 +775,22 @@ getFileValue
 
 @} */
 Get or set the value as determined by the preference tree.
+
 These methods MUST NOT fail if the preference is not set, and therefore
 they MUST have a default value. This default value is provided in practice
 by use of a default preference tree. The standard format for the pref
 branches are <tt>mail.server.<i>key</i>.</tt> for per-server preferences,
 such that the preference is <tt>mail.server.<i>key</i>.<i>attr</i></tt>.
+
 The attributes are passed in as strings for ease of access by the C++
 consumers of this method.
+
 There are two preference names on here for legacy reasons, where the first
 is the name which will be using a (preferred) relative preference and the
 second a deprecated absolute preference. Implementations that do not have
 to worry about supporting legacy preferences can safely ignore this second
 parameter. Callers must still provide a valid value, though.
+
 @{
 
 Parameters
@@ -876,10 +887,12 @@ configureTemporaryFilters
 
 for mail, this configures both the MDN filter, and the server-side
 spam filter filters, if needed.
+
 If we have set up to filter return receipts into
 our Sent folder, this utility method creates
 a filter to do that, and adds it to our filterList
 if it doesn't exist.  If it does, it will enable it.
+
 this is not used by news filters (yet).
 
 Parameters

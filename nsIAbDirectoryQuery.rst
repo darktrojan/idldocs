@@ -39,8 +39,10 @@ stopQuery
 
 Stops an existing query operation if
 query operation is asynchronous
+
 The nsIAbDirSearchListener will
 be notified when query has stopped
+
 It is implementation specific if notification
 synchronous or asynchronous
 

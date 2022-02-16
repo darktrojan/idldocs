@@ -40,9 +40,11 @@ extractHeader
 ``ACString extractHeader(headerName, getAllOfThem)``
 
 Get the text of a header.
+
 Leading and trailing whitespace from headers will be stripped from the
 return value. If getAllOfThem is set to true, then the returned string will
 have all of the values of the header, in order, joined with the ',\r\n\t'.
+
 If the header is not present, then the returned value is NULL.
 
 Parameters

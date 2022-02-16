@@ -15,6 +15,7 @@ notify
 
 Notify that results are ready, that have been requested
 using nsICMSMessage::asyncVerify[Detached]Signature()
+
 verificationResultCode matches synchronous result code from
 nsICMSMessage::verify[Detached]Signature
 

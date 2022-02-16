@@ -472,6 +472,7 @@ getOtherUsersWithAccess
 
 List all (human) users apart from the current user who have access to
 this folder.
+
 You can find out which rights they have with getRightsForUser().
 
 Return value
@@ -498,7 +499,9 @@ Return value
 
   list of flags
   e.g. "lrswipcd" for write access and "lrs" for read only access.
+
   See RFC 2086 (e.g. Cyrus) and RFC 4314 (e.g. dovecot)
+
   l = locate = visible in folder list
   r = read = list mails, get/read mail contents
   s = set seen flag = mark read. Does not affect other users.

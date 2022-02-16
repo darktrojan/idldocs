@@ -234,6 +234,7 @@ Parameters
 * in :doc:`nsILDAPMessage` aMessage
 
   is the LDAP message to get the values from
+
 * in :doc:`nsIAbCard` aCard
 
   is the card object whose values are to be set

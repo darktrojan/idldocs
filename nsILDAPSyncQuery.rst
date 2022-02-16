@@ -14,6 +14,7 @@ getQueryResults
 ``wstring getQueryResults(aServerURL, aProtocolVersion)``
 
 getQueryResults
+
 Create a new LDAP connection do a synchronous LDAP search and return
 the results.
 

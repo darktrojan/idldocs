@@ -19,6 +19,7 @@ queueAsyncAuthPrompt
 Queues an async prompt request. If there are none queued then this will be
 actioned straight away, otherwise the prompt will be queued for action
 once previous prompt(s) have been cleared.
+
 Queued prompts using the same aKey may be amalgamated into one prompt to
 save repeated prompts to the user.
 

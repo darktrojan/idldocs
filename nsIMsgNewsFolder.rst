@@ -82,31 +82,37 @@ NNTP authentication is slightly wonky, due to edge cases that are not seen
 in other protocols. Authentication is not necessary; if authentication is
 used, it could be configured on a per-group basis or even require only a
 username and not a password.
+
 Since passwords could be per-group, it is necessary to refer to passwords
 using the methods on this interface and not nsIMsgIncomingServer. Passwords
 for the server as a whole are found via the root folder. If the server is
 configured to use single sign-on (the default), asking any group for its
 password will result in the server's password, otherwise, each group stores
 its password individually.
+
 Due to this setup, most of the password management functions on
 nsIMsgIncomingServer do not correctly work. The only one that would affect
 the passwords stored on folders correctly is forgetPassword; using any
 other on a news server would result in inconsistent state.
+
 Before requesting either the username or password for authentication, it is
 first necessary to call getAuthenticationCredentials. If the method returns
 true, then groupUsername and groupPassword are appropriately set up for
 necessary authentication; if not, then authentication must be stopped.
 Gets the authentication credentials, returning if the results are valid.
+
 If mustPrompt is true, then the user will always be asked for the
 credentials. Otherwise, if mayPrompt is true, then the user will be asked
 for credentials if there are no saved credentials. If mayPrompt is false,
 then no prompt will be shown, even if there are no saved credentials.
+
 If this method returns true, then groupUsername and groupPassword will
 contain non-empty results that could be used for authentication. If this
 method returns false, then the values of groupUsername and groupPassword
 will be cleared if they had previously been set. This could happen if
 mustPrompt were true and the user decided to cancel the authentication
 prompt.
+
 Note that this method will be executed synchronously; if an async prompt
 is wanted, it is the responsibility of the caller to manage it explicitly
 with nsIMsgAsyncPrompter.
@@ -265,6 +271,7 @@ getDatabaseWithoutCache
 ``nsIMsgDatabase getDatabaseWithoutCache()``
 
 Retrieves the database, but does not cache it in mDatabase.
+
 This is useful for operations that shouldn't hold open the database.
 
 Return value
@@ -278,6 +285,7 @@ cancelMessage
 ``void cancelMessage(aMsgHdr, aMsgWindow)``
 
 Requests that a message be canceled.
+
 Note that, before sending the news cancel, this method will check to make
 sure that the user has proper permission to cancel the message.
 

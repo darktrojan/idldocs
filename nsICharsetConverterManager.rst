@@ -14,7 +14,6 @@ getCharsetAlias
 ``ACString getCharsetAlias(aCharset)``
 
 A shortcut to calling nsICharsetAlias to do alias resolution
-@throws if aCharset is an unknown charset.
 
 Parameters
 ^^^^^^^^^^
@@ -26,13 +25,17 @@ Return value
 
 * ACString
 
+Throws
+^^^^^^
+
+* if aCharset is an unknown charset.
+
 getCharsetTitle
 ---------------
 
 ``AString getCharsetTitle(aCharset)``
 
 Get the human-readable name for the given charset.
-@throws if aCharset is an unknown charset.
 
 Parameters
 ^^^^^^^^^^
@@ -43,6 +46,11 @@ Return value
 ^^^^^^^^^^^^
 
 * AString
+
+Throws
+^^^^^^
+
+* if aCharset is an unknown charset.
 
 getCharsetData
 --------------
@@ -56,7 +64,6 @@ for the source of this data. Some known property names:
 LangGroup      - language code for charset, e.g. 'he' and 'zh-CN'.
 isMultibyte    - is this a multi-byte charset?
 isInternal     - not to be used in untrusted web content.
-@throws if aCharset is an unknown charset.
 
 Parameters
 ^^^^^^^^^^
@@ -71,6 +78,11 @@ Return value
 
   the value of the property, for the character encoding.
 
+Throws
+^^^^^^
+
+* if aCharset is an unknown charset.
+
 getCharsetLangGroup
 -------------------
 
@@ -78,7 +90,6 @@ getCharsetLangGroup
 
 Get the language group for the given charset. This is similar to
 calling <tt>getCharsetData</tt> with the <tt>prop</tt> "LangGroup".
-@throws if aCharset is an unknown charset.
 
 Parameters
 ^^^^^^^^^^
@@ -91,6 +102,11 @@ Return value
 * AUTF8String
 
   the language code for the character encoding.
+
+Throws
+^^^^^^
+
+* if aCharset is an unknown charset.
 
 getCharsetLangGroupRaw
 ----------------------

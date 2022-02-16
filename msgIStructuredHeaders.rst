@@ -141,9 +141,11 @@ buildMimeText
 ``AUTF8String buildMimeText(sanitizeDate)``
 
 Retrieve the MIME representation of all of the headers.
+
 The header values are emitted in an ASCII form, unless internationalized
 email addresses are involved. The extra CRLF indicating the end of headers
 is not included in this representation.
+
 This accessor is provided mainly for the benefit of C++ consumers of this
 interface, since the JSMime headeremitter functionality allows more
 fine-grained customization of the results.

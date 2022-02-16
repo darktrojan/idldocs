@@ -50,10 +50,13 @@ getMessageContents
 ``void getMessageContents(aToPart, aCcPart, aBccPart, aSubjectPart, aBodyPart, aHtmlPart, aReferencePart, aNewsgroupPart, aFormat)``
 
 mailto: parse specific getters
+
 All of these fields are things we can effectively extract from a
 mailto url if it contains all of these values
+
 Note: Attachments aren't available because that would expose a potential
 security hole (see bug 99055).
+
 These items are in one function as we only ever get them from the one
 place and all at the same time.
 

@@ -92,7 +92,7 @@ Parameters
 
   The highest mod seq the parser has seen
   for this folder
-  */
+*/
 
 notifyMessageDeleted
 --------------------

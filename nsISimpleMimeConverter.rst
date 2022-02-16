@@ -32,6 +32,7 @@ would allows other events to processed on the thread (that means
 calls to NS_ProcessNextEvent()). Using a synchronous XMLHttpRequest
 is a prime example - it spins the thread queue, processing other
 events while it waits.
+
 It's an issue because it's likely that convertToHTML() is being called
 in response to data coming in from an async inputstream. Letting other
 events be handled on the thread means that more data might come in

@@ -220,6 +220,7 @@ checkWhiteList
 ``boolean checkWhiteList(aMsgHdr)``
 
 check if junk processing for a message should be bypassed
+
 Typically this is determined by comparing message to: address
 to a whitelist of known good addresses or domains.
 
@@ -235,4 +236,5 @@ Return value
 
   true  if this message is whitelisted, and junk
   processing should be bypassed
+
   false otherwise (including in case of error)

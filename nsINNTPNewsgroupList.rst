@@ -65,6 +65,7 @@ initXOVER
 ``void initXOVER(first_message, last_message)``
 
 Initializes the internal state to get the messages.
+
 This method should be called before sending the line
 <tt>XOVER @arg first_message-@arg last_message</tt> to the server.
 
@@ -121,6 +122,7 @@ processXHDRLine
 ``void processXHDRLine(aLine)``
 
 Processes a line of the server's response to XHDR.
+
 It will calculate the message number and other information itself, so the
 unadulterated line itself should be sent.
 
@@ -135,6 +137,7 @@ initHEAD
 ``void initHEAD(aMessage)``
 
 Initializes the internal state to process a HEAD command.
+
 This method should be called before sending the line
 <tt>HEAD @arg aMessage</tt> to the server.
 
@@ -149,6 +152,7 @@ processHEADLine
 ``void processHEADLine(aLine)``
 
 Processes a line of the server's response to HEAD.
+
 This will not check for a quoted '.' at the beginning.
 
 Parameters
@@ -174,6 +178,7 @@ callFilters
 ``void callFilters()``
 
 Calls the filters after all messages have been processed.
+
 This method also cleans out some internal state relating to the messages
 that have been processed, so it should always be called at the end of
 XOVER/XHDR/HEAD processing.

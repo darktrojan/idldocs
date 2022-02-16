@@ -26,12 +26,15 @@ msgAdded
 Notified immediately after a message is added to a folder. This could be a
 new incoming message to a local folder, or a new message in an IMAP folder
 when it is opened.
+
 You may want to consider using the msgsClassified notification instead of
 this notification if any of the following are true:
+
 - You only want to be notified about messages after junk classification
 has occurred (if it is going to occur for a message).  This also goes for
 trait classification which is a generic use of the bayesian engine at
 the heart of the spam logic.
+
 - You only want to be notified about messages after all filters have been
 run.  Although some filters may be run before the msgAdded notification
 is generated, filters dependent on junk/trait classification wait until
@@ -50,6 +53,7 @@ msgsClassified
 Notification that (new to the client) messages have been through junk and
 trait classification.  This event will occur for all messages at some point
 after their existence is revealed by msgAdded.
+
 Because junk classification does not run if no messages have ever been
 marked as junk by the user, it is possible to receive this message without
 any classification having actually been performed.  We still generate the
@@ -90,12 +94,15 @@ msgsDeleted
 
 Notified after a command to delete a group of messages has been given, but before the
 messages have actually been deleted.
+
 @note
 This notification will not take place if the messages are being deleted from the folder
 as the result of a move to another folder. Instead, the msgsMoveCopyCompleted() notification
 takes place.
+
 @note
 "Deleting" to a trash folder is actually a move, and is covered by msgsMoveCopyCompleted()
+
 @note
 If the user has selected the IMAP delete model (marking messages as deleted, then purging them
 later) for an IMAP account, this notification will not take place on the delete. This will only
@@ -114,6 +121,7 @@ msgsMoveCopyCompleted
 Notified after a command to move or copy a group of messages completes. In
 case of a move, this is before the messages have been deleted from the
 source folder.
+
 @note
 If messages are moved from a server which uses the IMAP delete model,
 you'll get aMove = false. That's because the messages are not deleted from
@@ -184,6 +192,7 @@ folderDeleted
 ``void folderDeleted(aFolder)``
 
 Notified after a folder has been deleted and its corresponding file(s) deleted from disk.
+
 @note
 "Deleting" to a trash folder is actually a move, and is covered by folderMoveCopyCompleted()
 

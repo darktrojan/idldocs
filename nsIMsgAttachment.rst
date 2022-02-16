@@ -158,6 +158,7 @@ equalsUrl
 ``boolean equalsUrl(attachment)``
 
 equalsUrl
+
 @ determines if both attachments have the same url.
 
 Parameters

@@ -174,6 +174,7 @@ generateName
 
 @} */
 Generate a name from the item for display purposes.
+
 If this item is an nsIAbCard, then it will use the aGenerateFormat option
 to determine the string to return.
 If this item is not an nsIAbCard, then the aGenerateFormat option may be
@@ -236,6 +237,7 @@ getPropertyAsAString
 @{
 Returns a property for the given name.  Javascript callers should NOT use these,
 but use getProperty instead. XPConnect will do the type conversion automagically.
+
 These functions convert values in the same manner as the default
 implementation of nsIVariant. Of particular note is that boolean variables
 are converted to integers as in C/C++ (true is a non-zero value), so that
@@ -310,6 +312,7 @@ setProperty
 
 @} */
 Assigns the given to value to the property of the given name.
+
 Should the property exist, its value will be overwritten. An
 implementation may impose additional semantic constraints for certain
 properties. However, such constraints might not be checked by this method.
@@ -334,6 +337,7 @@ setPropertyAsAString
 @{
 Sets a property for the given name.  Javascript callers should NOT use these,
 but use setProperty instead. XPConnect will do the type conversion automagically.
+
 These functions convert values in the same manner as the default
 implementation of nsIVariant.
 
@@ -383,6 +387,7 @@ deleteProperty
 
 @} */
 Deletes the property with the given name.
+
 Some properties may not be deleted. However, the implementation will not
 check this constraint at this method. If such a property is deleted, an
 error may be thrown when the card is modified at the database level.
@@ -399,6 +404,7 @@ hasEmailAddress
 
 Determines whether or not a card has the supplied email address in either
 of its PrimaryEmail or SecondEmail attributes.
+
 Note: This function is likely to be temporary whilst we work out proper
 APIs for multi-valued attributes in bug 118665.
 
@@ -503,6 +509,7 @@ equals
 ``boolean equals(aCard)``
 
 Returns true if this card is equal to the other card.
+
 The default implementation defines equal as this card pointing to the
 same object as @arg aCard; another implementation defines it as equality of
 properties and values.
@@ -514,6 +521,7 @@ properties and values.
   <tt>a.equals(b) == b.equals(a)</tt> might not return true. In
   particular, calling equals on cards from different address books
   may return inaccurate results.
+
 
 Parameters
 ^^^^^^^^^^

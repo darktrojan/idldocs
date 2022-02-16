@@ -101,6 +101,7 @@ matchRfc2047String
 ``boolean matchRfc2047String(aString, charset, charsetOverride)``
 
 Match the current header value against the incoming 2047-encoded string.
+
 This method will first apply the nsIMimeConverter decoding to the string
 (using the supplied parameters) and will then match the value against the
 decoded result.
